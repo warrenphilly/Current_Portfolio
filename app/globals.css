@@ -25,3 +25,8 @@ body {
     text-wrap: balance;
   }
 }
+
+@import "slick-carousel/slick/slick.css";
+@import "slick-carousel/slick/slick-theme.css";
+
+/* Your other global styles */
