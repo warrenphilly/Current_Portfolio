@@ -15,10 +15,9 @@ import Image from "next/image";
 
 export function BentoSection() {
   return (
-    
-    <div id="bento-section" className="w-full h-screen flex justify-center items-center ">
-      <div className="w-full max-w-7xl p-8    rounded-xl bg-white/30 backdrop-blur-lg shadow-lg m-10">
-        <BentoGrid className="mx-auto  gap-2  ">
+    <div id="bento-section" className="w-full flex justify-center items-center">
+      <div className="w-full max-w-7xl p-4 sm:p-8 rounded-xl md:bg-white/30 md:backdrop-blur-lg md:shadow-lg m-4 sm:m-10">
+        <BentoGrid className="mx-auto gap-4 sm:gap-2  ">
           {items.map((item, i) => (
             <BentoGridItem
               key={i}
@@ -36,38 +35,15 @@ export function BentoSection() {
 }
 
 const SkeletonOne = () => {
-  const variants = {
-    initial: {
-      x: 0,
-    },
-    animate: {
-      x: 10,
-      rotate: 5,
-      transition: {
-        duration: 0.2,
-      },
-    },
-  };
-  const variantsSecond = {
-    initial: {
-      x: 0,
-    },
-    animate: {
-      x: -10,
-      rotate: -5,
-      transition: {
-        duration: 0.2,
-      },
-    },
-  };
+  
 
   return (
     <motion.div
       initial="initial"
       whileHover="animate"
-      className="flex flex-1 w-full h-full rounded-xl bg-white/40 backdrop-blur-lg rounded-lg h-[280px] w-[280px] min-h-[6rem] dark:bg-dot-white/[0.2] bg-dot-black/[0.2] flex-col space-y-2"
+      className="flex flex-1 w-full rounded-full h-full bg-white/40 backdrop-blur-lg   min-h-[6rem] dark:bg-dot-white/[0.2] bg-dot-black/[0.2] flex-col space-y-2"
     >
-     <Image src="/assets/images/user.png" alt="avatar" height="100" width="100" className=" h-full w-full rounded-xl" />
+     <Image src="/assets/images/user.png" alt="avatar" height="100" width="100" className=" h-full w-full rounded-full border-2 border-neutral-400 shadow-xl" />
     </motion.div>
   );
 };
@@ -141,7 +117,7 @@ const SkeletonThree = () => {
         repeat: Infinity,
         repeatType: "reverse",
       }}
-      className="flex bg-white/80 backdrop-blur-lg rounded-lg flex-1 w-full h-full min-h-[6rem] dark:bg-dot-white/[0.2] rounded-lg bg-dot-black/[0.2] flex-col space-y-2"
+      className="flex bg-white/80 backdrop-blur-lg rounded-lg flex-1 w-full h-full min-h-[6rem] dark:bg-dot-white/[0.2]  bg-dot-black/[0.2] flex-col space-y-2"
       style={{
         background:
           "linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab)",
@@ -192,12 +168,12 @@ const SkeletonFour = () => {
           className="rounded-lg h-full w-full"
         />
         
-        <p className="border  w-full bg-warm-600 text-white dark:bg-red-900/20 text-gray-700 text-lg rounded-lg">
+        <p className="border  w-full bg-warm-600 text-white dark:bg-red-900/20  text-lg rounded-lg">
           Rifty.co
         </p>
       </motion.div>
       
-      <motion.div className="h-full bg-[#fafafa] relative z-20 w-1/3 rounded-2xl bg-white p-4 dark:bg-black dark:border-white/[0.1] border border-neutral-200 flex flex-col items-center justify-center">
+      <motion.div className="h-full  relative z-20 w-1/3 rounded-2xl bg-white p-4 dark:bg-black dark:border-white/[0.1] border border-neutral-200 flex flex-col items-center justify-center">
      
         <Image
           src="/assets/images/riftyProject.png"
@@ -207,14 +183,14 @@ const SkeletonFour = () => {
           className="rounded-lg h-full w-full"
         />
         
-        <p className="border  w-full bg-warm-600 text-white dark:bg-red-900/20 text-gray-700 text-lg rounded-lg">
+        <p className="border  w-full bg-warm-600 text-white dark:bg-red-900/20  text-lg rounded-lg">
           Rifty.co
         </p>
       </motion.div>
       
       <motion.div
         variants={second}
-        className="h-full w-1/3  bg-[#fafafa] rounded-2xl bg-white p-4 dark:bg-black dark:border-white/[0.1] border border-neutral-200 flex flex-col items-center justify-center"
+        className="h-full w-1/3  rounded-2xl bg-white p-4 dark:bg-black dark:border-white/[0.1] border border-neutral-200 flex flex-col items-center justify-center"
       >
    
         <Image
@@ -225,7 +201,7 @@ const SkeletonFour = () => {
           className="rounded-lg h-full w-full"
         />
         
-        <p className="border  w-full bg-warm-600 text-white dark:bg-red-900/20 text-gray-700 text-lg rounded-lg">
+        <p className="border  w-full bg-warm-600 text-white dark:bg-red-900/20 text-lg rounded-lg">
           Rifty.co
         </p>
       </motion.div>
@@ -307,7 +283,7 @@ const items = [
       </span>
     ),
     header: <SkeletonOne />,
-    className: "md:col-span-1 row-span-2 h-[500px]",
+    className: "md:col-span-1 md:row-span-2 md:h-[500px] ",
     icon: <IconClipboardCopy className="h-4 w-4 text-neutral-500" />,
   },
   {
@@ -337,7 +313,7 @@ const items = [
     title: "My Projects",
     description: (
       <span className="text-lg">
-        I know your curious about what I have been up to. Here's some of my work.
+        I know you&apos;re curious about what I&apos;ve been up to. Here&apos;s some of my work.
       </span>
     ),
     header: <SkeletonFour />,
@@ -349,7 +325,7 @@ const items = [
     title: "My Experience",
     description: (
       <span className="text-sm">
-        Here's the proof that I know what I'm doing.
+        Here&apos;s the proof that I know what I&apos;m doing.
       </span>
     ),
     header: <SkeletonThree />,

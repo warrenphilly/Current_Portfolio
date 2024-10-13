@@ -1,94 +1,73 @@
-import { useRef } from 'react';
-import Slider from 'react-slick';
-import ProjectCard from './ProjectCard';
-import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline';
+"use client";
+import { CardStack } from "@/components/ui/card-stack";
+import { cn } from "@/lib/utils";
 
-// Remove these lines:
-// import 'slick-carousel/slick/slick.css';
-// import 'slick-carousel/slick/slick-theme.css';
-
-type Project = {
-  title: string;
-  description: string;
-  image: string;
-  link: string;
-};
-
-export default function Projects() {
-  const sliderRef = useRef<Slider>(null);
-
-  const projects: Project[] = [
-    {
-      title: 'Project 1',
-      description: 'A brief description of project 1',
-      image: '/assets/images/riftyProject.png',
-      link: '/projects/1',
-    },
-    {
-      title: 'Project 2',
-      description: 'A brief description of project 2',
-      image: '/path/to/image2.jpg',
-      link: '/projects/2',
-    },
-    // Add more projects...
-  ];
-
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 2,
-        },
-      },
-      {
-        breakpoint: 640,
-        settings: {
-          slidesToShow: 1,
-        },
-      },
-    ],
-  };
-
-  const handlePrev = () => {
-    sliderRef.current?.slickPrev();
-  };
-
-  const handleNext = () => {
-    sliderRef.current?.slickNext();
-  };
-
+export function Projects() {
   return (
-    <div className="container mx-auto px-4 py-8">
-      <h1 className="text-4xl font-bold mb-8 text-center">My Projects</h1>
-      <div className="relative">
-        <Slider ref={sliderRef} {...settings}>
-          {projects.map((project, index) => (
-            <div key={index} className="px-2">
-              <ProjectCard project={project} />
-            </div>
-          ))}
-        </Slider>
-        <button
-          className="absolute top-1/2 left-0 transform -translate-y-1/2 -translate-x-full bg-white p-2 rounded-full shadow-md"
-          onClick={handlePrev}
-          aria-label="Previous project"
-        >
-          <ChevronLeftIcon className="h-6 w-6 text-gray-600" />
-        </button>
-        <button
-          className="absolute top-1/2 right-0 transform -translate-y-1/2 translate-x-full bg-white p-2 rounded-full shadow-md"
-          onClick={handleNext}
-          aria-label="Next project"
-        >
-          <ChevronRightIcon className="h-6 w-6 text-gray-600" />
-        </button>
-      </div>
+    <div className="h-full flex flex-col items-center justify-center w-full ">
+     
+  
+        <CardStack items={PROJECTS} />
+    
     </div>
   );
 }
+
+// Small utility to highlight the content of specific section of a project description
+export const Highlight = ({
+  children,
+  className,
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) => {
+  return (
+    <span
+      className={cn(
+        "font-bold bg-emerald-100 text-emerald-700 dark:bg-emerald-700/[0.2] dark:text-emerald-500 px-1 py-0.5",
+        className
+      )}
+    >
+      {children}
+    </span>
+  );
+};
+
+const PROJECTS = [
+  {
+    id: 0,
+    title: "Project Rifty",
+    image: "/assets/images/riftyProject.png",
+    content: (
+      <p>
+        Rifty is a <Highlight>cutting-edge web application</Highlight> that revolutionizes 
+        the way users interact with digital content. It features a 
+        <Highlight>seamless user interface</Highlight> and powerful backend capabilities.
+      </p>
+    ),
+  },
+  {
+    id: 1,
+    title: "AI Chatbot",
+    image: "/assets/images/chatbotProject.jpg",
+    content: (
+      <p>
+        An advanced <Highlight>AI-powered chatbot</Highlight> designed to provide 
+        intelligent responses and assist users with various tasks. It utilizes 
+        <Highlight>natural language processing</Highlight> for enhanced communication.
+      </p>
+    ),
+  },
+  {
+    id: 2,
+    title: "E-commerce Platform",
+    image: "/assets/images/ecommerceProject.jpg",
+    content: (
+      <p>
+        A robust <Highlight>e-commerce solution</Highlight> built with scalability in mind. 
+        It offers features like <Highlight>secure payments</Highlight>, inventory management, 
+        and a responsive design for optimal user experience across devices.
+      </p>
+    ),
+  },
+];

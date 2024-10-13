@@ -87,14 +87,14 @@ export const ModalBody = ({
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="fixed inset-0 z-50 flex items-center justify-center"
+          className="fixed inset-0 z-50 flex items-center justify-center w-full h-full "
         >
           <Overlay />
 
           <motion.div
             ref={modalRef}
             className={cn(
-              "relative z-50 w-full h-full md:max-w-4xl md:h-auto bg-white dark:bg-neutral-950 border border-transparent dark:border-neutral-800 md:rounded-2xl overflow-hidden",
+              "relative z-50 w-full h-full  bg-white dark:bg-neutral-950 border border-transparent dark:border-neutral-800 md:rounded-2xl overflow-hidden ",
               className
             )}
             initial={{ scale: 0.9, opacity: 0 }}
@@ -158,7 +158,7 @@ const Overlay = ({ className }: { className?: string }) => {
         opacity: 0,
         backdropFilter: "blur(0px)",
       }}
-      className={`fixed inset-0 bg-black bg-opacity-50 z-40 ${className}`}
+      className={`fixed inset-0 bg-warm-300/10 backdrop-blur-lg z-40 ${className}`}
     ></motion.div>
   );
 };

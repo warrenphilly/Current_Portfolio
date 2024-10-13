@@ -2,19 +2,10 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
 
 const Hero = () => {
   const [mounted, setMounted] = useState(false);
-  const variants = {
-    initial: {
-      backgroundPosition: "0 50%",
-    },
-    animate: {
-      backgroundPosition: ["0, 50%", "100% 50%", "0 50%"],
-    },
-  };
-
+  
   useEffect(() => {
     setMounted(true);
   }, []);
@@ -27,83 +18,85 @@ const Hero = () => {
   };
 
   return (
-    <div className="relative overflow-hidden flex items-center justify-center min-h-screen">
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="flex flex-col md:flex-row items-center justify-center  h-screen px-36">
+    <div className="overflow-hidden flex items-center justify-center min-h-screen">
+      <div className="container mx-auto px-4 py-8 md:py-0 z-10">
+        <div className="flex flex-col md:flex-row items-center justify-center h-full w-full">
           {/* Text content */}
-          <div className="md:w-1/2 space-y-6 mb-12 md:mb-0 text-left">
-            <h2
-              className={`text-3xl font-semibold text-warm-400 transform transition-all duration-500 ${
-                mounted
-                  ? "translate-y-0 opacity-100"
-                  : "translate-y-4 opacity-0"
-              }`}
-            >
-              Hey, I'm
-            </h2>
-
-           
+          <div className="w-full space-y-4 md:space-y-6 mb-8 md:mb-0 text-center md:text-left flex flex-col items-center md:items-start justify-center">
+            <div className="flex flex-col items-center md:items-start">
+              <h2
+                className={`text-2xl md:text-4xl font-semibold text-warm-600 transform transition-all duration-500 ${
+                  mounted ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
+                }`}
+              >
+                Hey, I&apos;m
+              </h2>
               <h1
-                className={`text-8xl sm:text-6xl text-warm-700 font-bold text-gray-400 transform transition-all duration-500 delay-100 ${
-                  mounted
-                    ? "translate-y-0 opacity-100"
-                    : "translate-y-4 opacity-0"
+                className={`text-4xl sm:text-6xl md:text-8xl text-warm-900 font-bold transform transition-all duration-500 delay-100 ${
+                  mounted ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
                 }`}
               >
                 Warren,
               </h1>
-          
+            </div>
+            
             <h3
-              className={`text-4xl text-warm-500 font-semibold text-warm-600 transform transition-all duration-500 delay-100 ${
-                mounted
-                  ? "translate-y-0 opacity-100"
-                  : "translate-y-4 opacity-0"
+              className={`text-xl md:text-4xl text-warm-600 font-semibold transform transition-all duration-500 delay-100 ${
+                mounted ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
               }`}
             >
               Software Engineer
             </h3>
+
             <p
-              className={`text-2xl  text-warm-500 max-w-md transform transition-all duration-500 delay-200 ${
-                mounted
-                  ? "translate-y-0 opacity-100"
-                  : "translate-y-4 opacity-0"
+              className={`text-lg md:text-2xl text-warm-900 max-w-md mx-auto md:mx-0 transform transition-all duration-500 delay-200 ${
+                mounted ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
               }`}
             >
               I turn coffee into code and bring ideas to life.
             </p>
+
+            {/* Avatar for mobile */}
+            <div className="md:hidden w-48 h-48 mx-auto my-6">
+              <Image
+                src="/assets/images/myAvatar.png"
+                alt="Warren"
+                width={200}
+                height={200}
+                className="transition-all duration-300 w-full h-full"
+              />
+            </div>
+
             <div
-              className={`transform transition-all duration-500 gap-4 delay-300 ${
-                mounted
-                  ? "translate-y-0 opacity-100"
-                  : "translate-y-4 opacity-0"
+              className={`transform transition-all duration-500 delay-300 ${
+                mounted ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
               }`}
             >
-              <button className="bg-warm-900 text-white px-6 py-3 rounded-2xl cursor-pointer shadow-lg font-semibold hover:bg-warm-600 transition-colors duration-300">
-                Download Resume
-              </button>
-              <button 
-                className="ml-4 bg-warm-900 text-white px-6 py-3 rounded-2xl cursor-pointer shadow-lg font-semibold hover:bg-warm-600 transition-colors duration-300"
-                onClick={handleScrollToBento}
-                aria-label="Scroll to Bento section"
-              >
-                Check out My Stuff
-              </button>
+              <div className="flex flex-col sm:flex-row gap-4 items-center justify-center md:justify-start w-full mt-5">
+                <button className="bg-orange-400 w-full sm:w-[200px] text-white px-6 py-3 rounded-2xl cursor-pointer shadow-lg font-semibold hover:bg-warm-400 transition-colors duration-300">
+                  Download Resume
+                </button>
+                <button 
+                  className="w-full sm:w-[200px] text-white px-6 py-3 bg-warm-900 rounded-2xl cursor-pointer shadow-lg font-semibold hover:bg-warm-400 hover:text-white transition-colors duration-300"
+                  onClick={handleScrollToBento}
+                  aria-label="Scroll to Bento section"
+                >
+                  Check out My Stuff
+                </button>
+              </div>
             </div>
           </div>
 
-          {/* Avatar */}
-          <div className="md:w-1/2  flex justify-center md:justify-end">
-            <div className="relative">
-              
-            
-                <Image
-                  src="/assets/images/myAvatar.png"
-                  alt="Warren"
-                  width={600}
-                  height={600}
-                  className="transition-all duration-300 w-full h-full"
-                />
-            
+          {/* Avatar for larger screens */}
+          <div className="hidden md:flex md:w-full justify-center md:justify-end">
+            <div className="relative w-[400px] h-[400px] lg:w-[600px] lg:h-[600px]">
+              <Image
+                src="/assets/images/myAvatar.png"
+                alt="Warren"
+                layout="fill"
+                objectFit="contain"
+                className="transition-all duration-300"
+              />
             </div>
           </div>
         </div>
