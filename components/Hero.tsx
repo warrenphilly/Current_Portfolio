@@ -89,9 +89,9 @@ const Hero = () => {
 
           {/* Avatar for larger screens */}
           <div className="hidden md:flex md:w-full justify-center md:justify-end">
-            <div className="relative w-[400px] h-[400px] lg:w-[600px] lg:h-[600px]">
+            <div className="relative w-[400px] h-[400px] lg:w-[800px] lg:h-[800px]">
               <Image
-                src="/assets/images/myAvatar.png"
+                src="/assets/images/avatar3.png"
                 alt="Warren"
                 layout="fill"
                 objectFit="contain"

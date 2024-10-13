@@ -41,9 +41,9 @@ const SkeletonOne = () => {
     <motion.div
       initial="initial"
       whileHover="animate"
-      className="flex flex-1 w-full rounded-full h-full bg-white/40 backdrop-blur-lg   min-h-[6rem] dark:bg-dot-white/[0.2] bg-dot-black/[0.2] flex-col space-y-2"
+      className="flex flex-1 w-full bg-red-300 rounded-lg h-full bg-white/40 backdrop-blur-lg   min-h-[6rem] dark:bg-dot-white/[0.2] bg-dot-black/[0.2] flex-col space-y-2 "
     >
-     <Image src="/assets/images/user.png" alt="avatar" height="100" width="100" className=" h-full w-full rounded-full border-2 border-neutral-400 shadow-xl" />
+     <Image src="/assets/images/avatarPeaceful.png" alt="avatar" height="100" width="100" className=" h-full w-full border-neutral-400  ml-2" />
     </motion.div>
   );
 };
