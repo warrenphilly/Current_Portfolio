@@ -1,63 +1,82 @@
-import { motion } from 'framer-motion';
+import { motion, useAnimation } from 'framer-motion';
 import { useEffect, useState } from 'react';
 
-const generateBlobPath = () => {
-  const numberOfPoints = 50;
-  let path = "M";
-  for (let i = 0; i < numberOfPoints; i++) {
-    const angle = (i / numberOfPoints) * Math.PI * 2;
-    const radius = 40 + Math.random() * 10;
-    const x = 50 + Math.cos(angle) * radius;
-    const y = 50 + Math.sin(angle) * radius;
-    path += `${x},${y} `;
-  }
-  return path + "Z";
+const RAINDROP_COUNT = 100;
+
+interface Raindrop {
+  id: number;
+  size: number;
+  opacity: number;
+  x: number;
+  y: number;
+  speed: number;
+}
+
+const generateRaindrops = (): Raindrop[] => {
+  return Array.from({ length: RAINDROP_COUNT }, (_, i) => ({
+    id: i,
+    size: Math.random() * 4 + 1,
+    opacity: Math.random() * 0.7 + 0.3,
+    x: Math.random() * 100,
+    y: Math.random() * -100,
+    speed: Math.random() * 0.5 + 0.5,
+  }));
 };
 
 const DynamicBackground: React.FC = () => {
-  const [startPath, setStartPath] = useState(generateBlobPath());
-  const [endPath, setEndPath] = useState(generateBlobPath());
+  const [raindrops, setRaindrops] = useState<Raindrop[]>(generateRaindrops());
+  const flashControls = useAnimation();
 
   useEffect(() => {
-    const intervalId = setInterval(() => {
-      setStartPath(endPath);
-      setEndPath(generateBlobPath());
-    }, 7000);
-    return () => clearInterval(intervalId);
-  }, [endPath]);
+    const rainInterval = setInterval(() => {
+      setRaindrops((prevDrops) =>
+        prevDrops.map((drop) => ({
+          ...drop,
+          y: drop.y > 100 ? Math.random() * -10 : drop.y + drop.speed,
+        }))
+      );
+    }, 50);
+
+    const lightningInterval = setInterval(() => {
+      if (Math.random() < 0.1) {
+        flashControls.start({
+          opacity: [0, 1, 0],
+          transition: { duration: 0.5, times: [0, 0.1, 1] },
+        });
+      }
+    }, 1000);
+
+    return () => {
+      clearInterval(rainInterval);
+      clearInterval(lightningInterval);
+    };
+  }, [flashControls]);
 
   return (
-    <div className="fixed inset-0 z-[-1] overflow-hidden bg-white">
-      <svg className="absolute inset-0 w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
-        <defs>
-          <linearGradient id="blob-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#8B0000" />
-            <stop offset="50%" stopColor="#DC143C" />
-            <stop offset="100%" stopColor="#FF6B6B" />
-          </linearGradient>
-          <filter id="goo">
-            <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur" />
-            <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="goo" />
-            <feComposite in="SourceGraphic" in2="goo" operator="atop" />
-          </filter>
-        </defs>
-        <g filter="url(#goo)">
-          <motion.path
-            d={startPath}
-            fill="url(#blob-gradient)"
-            animate={{ d: endPath }}
-            transition={{
-              duration: 7,
-              ease: "easeInOut",
-              repeat: Infinity,
-              repeatType: "loop",
-            }}
-          />
-        </g>
-      </svg>
-
-      {/* Frosted glass effect */}
-      <div className="absolute inset-0 backdrop-blur-md bg-white/20" />
+    <div className="fixed inset-0 z-[-1] overflow-hidden bg-navy-blue">
+      {raindrops.map((drop) => (
+        <motion.div
+          key={drop.id}
+          className="absolute rounded-full bg-sky-200"
+          style={{
+            width: drop.size,
+            height: drop.size * 3,
+            left: `${drop.x}%`,
+            opacity: drop.opacity,
+          }}
+          animate={{ y: ['0%', '100%'] }}
+          transition={{
+            duration: 100 / drop.speed,
+            repeat: Infinity,
+            ease: 'linear',
+          }}
+        />
+      ))}
+      <motion.div
+        className="absolute inset-0 bg-white pointer-events-none"
+        animate={flashControls}
+        initial={{ opacity: 0 }}
+      />
     </div>
   );
 };
