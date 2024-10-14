@@ -1,7 +1,7 @@
 "use client";
 import { cn } from "@/lib/utils";
 import { motion, AnimatePresence } from "framer-motion";
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useState, useEffect, useCallback } from "react";
 
 export const BackgroundBeamsWithCollision = ({
   children,
@@ -31,6 +31,7 @@ export const BackgroundBeamsWithCollision = ({
         className
       )}
     >
+      <LightningEffect />
       {beams.map((beam, index) => (
         <CollisionMechanism
           key={`beam-${index}`}
@@ -205,5 +206,33 @@ const Explosion = ({ ...props }: React.HTMLProps<HTMLDivElement>) => {
         />
       ))}
     </div>
+  );
+};
+
+const LightningEffect = () => {
+  const [isFlashing, setIsFlashing] = useState(false);
+
+  const triggerLightning = useCallback(() => {
+    setIsFlashing(true);
+    setTimeout(() => setIsFlashing(false), 100);
+  }, []);
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      if (Math.random() < 0.4) { // 10% chance of lightning every 2 seconds
+        triggerLightning();
+      }
+    }, 2000);
+
+    return () => clearInterval(intervalId);
+  }, [triggerLightning]);
+
+  return (
+    <motion.div
+      className="absolute inset-0 bg-white pointer-events-none"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: isFlashing ? 10 : 0 }}
+      transition={{ duration: 0.95 }}
+    />
   );
 };
