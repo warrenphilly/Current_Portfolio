@@ -49,12 +49,12 @@ const Hero = () => {
             </h3>
 
             <p
-              className={`text-lg md:text-2xl text-lightBlue-200 max-w-md mx-auto md:mx-0 transform transition-all duration-500 delay-200 ${
-                mounted ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
-              }`}
-            >
-              I turn coffee into code and bring ideas to life.
-            </p>
+  className={`text-lg md:text-2xl text-blue-300 max-w-md mx-auto md:mx-0 transform transition-all duration-500 delay-200 ${
+    mounted ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
+  } shadow-glow-sm`}
+>
+  By day, I'm a keyboard ninja, slaying bugs and crafting digital dreams. By night, I'm... well, probably still coding, but with more pizza and less pants. I speak fluent JavaScript, can debug in my sleep, and have been known to high-five my computer when tests pass. My code is so clean, it squeaks. When I'm not turning coffee into code, I'm dreaming up new ways to make computers do my bidding. Warning: May spontaneously burst into algorithm discussions.
+</p>
 
             {/* Avatar for mobile */}
             <div className="md:hidden w-48 h-48 mx-auto my-6">
