@@ -1,7 +1,7 @@
 "use client";
 import { cn } from "@/lib/utils";
 import { motion, AnimatePresence } from "framer-motion";
-import React, { useRef, useState, useEffect, useCallback,useMemo } from "react";
+import React, { useRef, useState, useEffect } from "react";
 
 export const BackgroundBeamsWithCollision = ({
   children,
@@ -15,23 +15,22 @@ export const BackgroundBeamsWithCollision = ({
 
   const generateRandomBeam = () => ({
     initialX: Math.random() * 2500, // Spread across 2500px width
-    duration: Math.random() * 1.5 + 0.5/10, // Duration between 0.5 and 2 seconds
-    repeatDelay: Math.random() * 1, // Random delay between 0 and 1 second
-    delay: Math.random() * 2, // Initial delay between 0 and 2 seconds
+    duration: Math.random() * 1.5 + 0.5/100, // Duration between 0.5 and 2 seconds
+    repeatDelay: Math.random() * 1/100, // Random delay between 0 and 1 second
+    delay: Math.random() * 2/100, // Initial delay between 0 and 2 seconds
     className: `h-${Math.floor(Math.random() * 20) + 4}`, // Random height between h-4 and h-24
   });
 
-  const beams = Array.from({ length: 10 }, generateRandomBeam);
+  const beams = Array.from({ length: 30 }, generateRandomBeam);
 
   return (
     <div
       ref={parentRef}
       className={cn(
-        "h-full bg-gradient-to-b from-neutral-950 to-neutral-800 dark:from-neutral-950 dark:to-neutral-800 relative flex items-center w-full justify-center overflow-hidden",
+        "h-screen bg-gradient-to-b from-[#082f49] to-neutral-800 dark:from-neutral-950 dark:to-neutral-800 relative flex items-center w-full justify-center overflow-hidden",
         className
       )}
     >
-      <LightningEffect />
       {beams.map((beam, index) => (
         <CollisionMechanism
           key={`beam-${index}`}
@@ -44,11 +43,7 @@ export const BackgroundBeamsWithCollision = ({
       {children}
       <div
         ref={containerRef}
-        className="absolute top-[60%] bg-neutral-100 w-screen inset-x-0 pointer-events-none "
-        style={{
-          boxShadow:
-            "0 0 24px rgba(34, 42, 53, 0.06), 0 1px 1px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(34, 42, 53, 0.04), 0 0 4px rgba(34, 42, 53, 0.08), 0 16px 68px rgba(47, 48, 55, 0.05), 0 1px 0 rgba(255, 255, 255, 0.1) inset",
-        }}
+        className="absolute top-[80%] bg-transparent w-screen inset-x-0 pointer-events-none"
       ></div>
     </div>
   );
@@ -128,6 +123,7 @@ const CollisionMechanism = React.forwardRef<
 
   return (
     <>
+      
       <motion.div
         key={beamKey}
         ref={beamRef}
@@ -206,72 +202,5 @@ const Explosion = ({ ...props }: React.HTMLProps<HTMLDivElement>) => {
         />
       ))}
     </div>
-  );
-};
-
-const LightningEffect = () => {
-  const [isFlashing, setIsFlashing] = useState(false);
-
-  const generateLightningPath = useCallback(() => {
-    const startX = Math.random() * 2000; // Spread across 2000px width
-    let path = `M ${startX} 0`; // Always start from the top (y = 0)
-    let x = startX;
-    let y = 0;
-    for (let i = 0; i < 5; i++) {
-      x += Math.random() * 200 - 100; // Move left or right
-      y += Math.random() * 200; // Always move downwards
-      path += ` L ${x} ${y}`;
-    }
-    return path;
-  }, []);
-
-  const lightningPaths = useMemo(() => {
-    return Array.from({ length: 3 }, () => generateLightningPath());
-  }, [generateLightningPath]);
-
-  const triggerLightning = useCallback(() => {
-    setIsFlashing(true);
-    setTimeout(() => setIsFlashing(false), 200);
-  }, []);
-
-  useEffect(() => {
-    const intervalId = setInterval(() => {
-      if (Math.random() < 0.6) { // 60% chance of lightning every 2 seconds
-        triggerLightning();
-      }
-    }, 2000);
-
-    return () => clearInterval(intervalId);
-  }, [triggerLightning]);
-
-  return (
-    <>
-    <motion.div
-      className="absolute inset-0 bg-white pointer-events-none"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: isFlashing ?0.6 : 0 }}
-      transition={{ duration: 0.1 }}
-    />
-    <motion.svg
-      className="absolute inset-0 w-full h-full pointer-events-none"
-      viewBox="0 0 2000 1000"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: isFlashing ? 1 : 0 }}
-      transition={{ duration: 0.1 }}
-    >
-      {lightningPaths.map((path, index) => (
-        <motion.path
-          key={index}
-          d={path}
-          stroke="white"
-          strokeWidth="2"
-          fill="none"
-          initial={{ pathLength: 0, opacity: 0 }}
-          animate={{ pathLength: 1, opacity: 1 }}
-          transition={{ duration: 0.2, ease: "easeOut" }}
-        />
-      ))}
-    </motion.svg>
-    </>
   );
 };

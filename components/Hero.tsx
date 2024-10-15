@@ -18,21 +18,21 @@ const Hero = () => {
   };
 
   return (
-    <div className="overflow-hidden flex items-center justify-center min-h-screen">
+    <div className="overflow-hidden flex items-center justify-center min-h-screen ">
       <div className="container mx-auto px-4 py-8 md:py-0 z-10">
         <div className="flex flex-col md:flex-row items-center justify-center h-full w-full">
           {/* Text content */}
           <div className="w-full space-y-4 md:space-y-6 mb-8 md:mb-0 text-center md:text-left flex flex-col items-center md:items-start justify-center">
             <div className="flex flex-col items-center md:items-start">
               <h2
-                className={`text-2xl md:text-4xl font-semibold text-warm-600 transform transition-all duration-500 ${
+                className={`text-2xl md:text-4xl font-semibold text-lightBlue-200 transform transition-all duration-500 ${
                   mounted ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
                 }`}
               >
                 Hey, I&apos;m
               </h2>
               <h1
-                className={`text-4xl sm:text-6xl md:text-8xl text-warm-900 font-bold transform transition-all duration-500 delay-100 ${
+                className={`text-4xl sm:text-6xl md:text-8xl text-lightBlue-300 font-bold transform transition-all duration-500 delay-100 ${
                   mounted ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
                 }`}
               >
@@ -41,7 +41,7 @@ const Hero = () => {
             </div>
             
             <h3
-              className={`text-xl md:text-4xl text-warm-600 font-semibold transform transition-all duration-500 delay-100 ${
+              className={`text-xl md:text-4xl text-lightBlue-600 font-semibold transform transition-all duration-500 delay-100 ${
                 mounted ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
               }`}
             >
@@ -49,7 +49,7 @@ const Hero = () => {
             </h3>
 
             <p
-              className={`text-lg md:text-2xl text-warm-900 max-w-md mx-auto md:mx-0 transform transition-all duration-500 delay-200 ${
+              className={`text-lg md:text-2xl text-lightBlue-200 max-w-md mx-auto md:mx-0 transform transition-all duration-500 delay-200 ${
                 mounted ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
               }`}
             >
@@ -73,11 +73,11 @@ const Hero = () => {
               }`}
             >
               <div className="flex flex-col sm:flex-row gap-4 items-center justify-center md:justify-start w-full mt-5">
-                <button className="bg-orange-400 w-full sm:w-[200px] text-white px-6 py-3 rounded-2xl cursor-pointer shadow-lg font-semibold hover:bg-warm-400 transition-colors duration-300">
+                <button className="bg-lightBlue-400 w-full sm:w-[200px] text-white px-6 py-3 rounded-2xl cursor-pointer shadow-lg font-semibold hover:bg-warm-400 transition-colors duration-300">
                   Download Resume
                 </button>
                 <button 
-                  className="w-full sm:w-[200px] text-white px-6 py-3 bg-warm-900 rounded-2xl cursor-pointer shadow-lg font-semibold hover:bg-warm-400 hover:text-white transition-colors duration-300"
+                  className="w-full sm:w-[200px] text-white px-6 py-3 bg-lightBlue-700 rounded-2xl cursor-pointer shadow-lg font-semibold hover:bg-warm-400 hover:text-white transition-colors duration-300"
                   onClick={handleScrollToBento}
                   aria-label="Scroll to Bento section"
                 >

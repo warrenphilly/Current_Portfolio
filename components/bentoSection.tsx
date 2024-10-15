@@ -16,7 +16,7 @@ import Image from "next/image";
 export function BentoSection() {
   return (
     <div id="bento-section" className="w-full flex justify-center items-center">
-      <div className="w-full max-w-7xl p-4 sm:p-8 rounded-xl md:bg-white/30 md:backdrop-blur-lg md:shadow-lg m-4 sm:m-10">
+      <div className="w-full max-w-7xl p-4 sm:p-8 rounded-xl   m-4 sm:m-10">
         <BentoGrid className="mx-auto gap-4 sm:gap-2  ">
           {items.map((item, i) => (
             <BentoGridItem
@@ -252,17 +252,7 @@ const SkeletonFive = () => {
         variants={variants}
         className="flex flex-row rounded-2xl border border-neutral-100 dark:border-white/[0.2] p-2  items-start space-x-2 bg-white dark:bg-black"
       >
-        <Image
-          src="/public/assets/images/user.png"
-          alt="avatar"
-          height="100"
-          width="100"
-          className="rounded-full h-10 w-10"
-        />
-        <p className="text-xs text-neutral-500">
-          There are a lot of cool framerworks out there like React, Angular,
-          Vue, Svelte that can make your life ....
-        </p>
+     
       </motion.div>
       <motion.div
         variants={variantsSecond}

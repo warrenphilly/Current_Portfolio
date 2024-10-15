@@ -80,7 +80,7 @@ export const BentoGridItem = ({
       <ModalProvider>
         <div
           className={cn(
-            "hover:shadow-xl rounded-xl shadow-input dark:shadow-none bg-white/70 backdrop-blur-lg dark:bg-black dark:border-white/[0.2] border-2 border-neutral-300 w-full h-full flex flex-col",
+            "hover:shadow-xl rounded-xl shadow-input dark:shadow-none bg-[#8ad0ff]/10 backdrop-blur-2xl dark:bg-black dark:border-white/[0.2]  w-full h-full flex flex-col",
             className
           )}
         >
@@ -101,10 +101,10 @@ export const BentoGridItem = ({
                 >
                   <div className="group-hover/bento:translate-x-2 transition duration-200">
                     {icon}
-                    <div className="font-sans font-bold text-neutral-600 dark:text-neutral-200 mb-1 sm:mb-2 text-lg sm:text-xl">
+                    <div className="font-sans font-bold text-lightBlue-300 dark:text-neutral-200 mb-1 sm:mb-2 text-lg sm:text-xl">
                       {title}
                     </div>
-                    <div className="font-sans font-normal text-neutral-600 text-xs sm:text-sm dark:text-neutral-300">
+                    <div className="font-sans font-normal text-lightBlue-600 text-xs sm:text-sm dark:text-neutral-300">
                       {description}
                     </div>
                   </div>
@@ -116,7 +116,7 @@ export const BentoGridItem = ({
 
         <ModalBody className="h-full  mx-auto bg-warm-100/30 backdrop-blur-lg rounded-lg flex-1 w-full  min-h-[6rem] dark:bg-dot-white/[0.2]   flex-col  overflow-y-auto ">
           <ModalContent className="w-full h-full max-w-4xl mx-auto bg-transparent overflow-y-auto p-4 sm:p-6 ">
-            <h4 className="text-xl sm:text-2xl \ rounded-full p-2 sm:p-3 px-4 sm:px-5  text-black w-fit   dark:text-neutral-100 bg font-bold text-center mb-4 sm:mb-8">
+            <h4 className="text-xl sm:text-2xl \ rounded-full p-2 sm:p-3 px-4 sm:px-5  text-lightBlue-900 w-fit   dark:text-neutral-100 bg font-bold text-center mb-4 sm:mb-8">
               {title}
             </h4>
             {renderComponent()}
