@@ -5,15 +5,15 @@ import Image from "next/image";
 
 const Hero = () => {
   const [mounted, setMounted] = useState(false);
-  
+
   useEffect(() => {
     setMounted(true);
   }, []);
 
   const handleScrollToBento = () => {
-    const bentoSection = document.getElementById('bento-section');
+    const bentoSection = document.getElementById("bento-section");
     if (bentoSection) {
-      bentoSection.scrollIntoView({ behavior: 'smooth' });
+      bentoSection.scrollIntoView({ behavior: "smooth" });
     }
   };
 
@@ -26,40 +26,51 @@ const Hero = () => {
             <div className="flex flex-col items-center md:items-start">
               <h2
                 className={`text-2xl md:text-4xl font-semibold text-lightBlue-200 transform transition-all duration-500 ${
-                  mounted ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
+                  mounted
+                    ? "translate-y-0 opacity-100"
+                    : "translate-y-4 opacity-0"
                 }`}
               >
                 Hey, I&apos;m
               </h2>
               <h1
                 className={`text-4xl sm:text-6xl md:text-8xl text-lightBlue-300 font-bold transform transition-all duration-500 delay-100 ${
-                  mounted ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
+                  mounted
+                    ? "translate-y-0 opacity-100"
+                    : "translate-y-4 opacity-0"
                 }`}
               >
                 Warren,
               </h1>
             </div>
-            
+
             <h3
               className={`text-xl md:text-4xl text-lightBlue-600 font-semibold transform transition-all duration-500 delay-100 ${
-                mounted ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
+                mounted
+                  ? "translate-y-0 opacity-100"
+                  : "translate-y-4 opacity-0"
               }`}
             >
               Software Engineer
             </h3>
 
             <p
-  className={`text-lg md:text-2xl text-blue-300 max-w-md mx-auto md:mx-0 transform transition-all duration-500 delay-200 ${
-    mounted ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
-  } shadow-glow-sm`}
->
-  By day, I'm a keyboard ninja, slaying bugs and crafting digital dreams. By night, I'm... well, probably still coding, but with more pizza and less pants. I speak fluent JavaScript, can debug in my sleep, and have been known to high-five my computer when tests pass. My code is so clean, it squeaks. When I'm not turning coffee into code, I'm dreaming up new ways to make computers do my bidding. Warning: May spontaneously burst into algorithm discussions.
-</p>
+              className={`text-sm md:text-lg text-blue-300 max-w-md mx-auto md:mx-0 transform transition-all duration-500 delay-200 ${
+                mounted
+                  ? "translate-y-0 opacity-100"
+                  : "translate-y-4 opacity-0"
+              } shadow-glow-sm`}
+            >
+               I'm a keyboard ninja, slayer of bugs and blacksmithof digital
+              dreams. My code is so clean, it squeaks. When I'm not turning coffee
+              into code, I'm dreaming up new ways to make computers do my
+              bidding. 
+            </p>
 
             {/* Avatar for mobile */}
             <div className="md:hidden w-48 h-48 mx-auto my-6">
               <Image
-                src="/assets/images/myAvatar.png"
+                src="/assets/images/pureAvatar.png"
                 alt="Warren"
                 width={200}
                 height={200}
@@ -69,15 +80,17 @@ const Hero = () => {
 
             <div
               className={`transform transition-all duration-500 delay-300 ${
-                mounted ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
+                mounted
+                  ? "translate-y-0 opacity-100"
+                  : "translate-y-4 opacity-0"
               }`}
             >
               <div className="flex flex-col sm:flex-row gap-4 items-center justify-center md:justify-start w-full mt-5">
-                <button className="bg-lightBlue-400 w-full sm:w-[200px] text-white px-6 py-3 rounded-2xl cursor-pointer shadow-lg font-semibold hover:bg-warm-400 transition-colors duration-300">
+                <button className="bg-lightBlue-400 w-full sm:w-[200px] text-white px-6 py-3 rounded-2xl cursor-pointer shadow-lg font-semibold hover:bg-darkBlue-400 transition-colors duration-300">
                   Download Resume
                 </button>
-                <button 
-                  className="w-full sm:w-[200px] text-white px-6 py-3 bg-lightBlue-700 rounded-2xl cursor-pointer shadow-lg font-semibold hover:bg-warm-400 hover:text-white transition-colors duration-300"
+                <button
+                  className="w-full sm:w-[200px] text-white px-6 py-3 bg-lightBlue-700 rounded-2xl cursor-pointer shadow-lg font-semibold hover:bg-darkBlue-400 hover:text-white transition-colors duration-300"
                   onClick={handleScrollToBento}
                   aria-label="Scroll to Bento section"
                 >
@@ -89,9 +102,9 @@ const Hero = () => {
 
           {/* Avatar for larger screens */}
           <div className="hidden md:flex md:w-full justify-center md:justify-end">
-            <div className="relative w-[400px] h-[400px] lg:w-[800px] lg:h-[800px]">
+            <div className="relative w-[400px] h-[400px] lg:w-[1000px] lg:h-[1000px]">
               <Image
-                src="/assets/images/avatar3.png"
+                src="/assets/images/pureAvatar.png"
                 alt="Warren"
                 layout="fill"
                 objectFit="contain"

@@ -65,7 +65,7 @@ export function Lightning() {
       path += ` L ${x} ${y}`;
     }
     return path;
-  }, [width, height]);
+  }, [isFlashing]);
 
   const lightningPaths = useMemo(() => {
     return Array.from({ length: 3 }, () => generateLightningPath());

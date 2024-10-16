@@ -21,7 +21,7 @@ export const BackgroundBeamsWithCollision = ({
     className: `h-${Math.floor(Math.random() * 20) + 4}`, // Random height between h-4 and h-24
   });
 
-  const beams = Array.from({ length: 30 }, generateRandomBeam);
+  const beams = Array.from({ length: 20 }, generateRandomBeam);
 
   return (
     <div
