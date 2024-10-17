@@ -80,7 +80,7 @@ export const BentoGridItem = ({
       <ModalProvider>
         <div
           className={cn(
-            "hover:shadow-xl rounded-xl shadow-input dark:shadow-none bg-[#8ad0ff]/10 backdrop-blur-2xl dark:bg-black dark:border-white/[0.2]  w-full h-full flex flex-col",
+            "hover:shadow-xl rounded-xl shadow-input dark:shadow-none bg-[#8ad0ff]/10 backdrop-blur-2xl   w-full h-full flex flex-col",
             className
           )}
         >
@@ -114,9 +114,9 @@ export const BentoGridItem = ({
           </ModalTrigger>
         </div>
 
-        <ModalBody className="h-full  mx-auto bg-warm-100/30 backdrop-blur-lg rounded-lg flex-1 w-full  min-h-[6rem] dark:bg-dot-white/[0.2]   flex-col  overflow-y-auto ">
+        <ModalBody className="h-full  mx-auto bg-[#0f3e65]/90  backdrop-blur-2xl rounded-lg flex-1 w-full  min-h-[6rem]  flex-col  overflow-y-auto ">
           <ModalContent className="w-full h-full max-w-4xl mx-auto bg-transparent overflow-y-auto p-4 sm:p-6 ">
-            <h4 className="text-xl sm:text-2xl \ rounded-full p-2 sm:p-3 px-4 sm:px-5  text-lightBlue-900 w-fit   dark:text-neutral-100 bg font-bold text-center mb-4 sm:mb-8">
+            <h4 className="text-xl sm:text-2xl \ rounded-full p-2 sm:p-3 px-4 sm:px-5  text-lightBlue-300 w-fit    bg font-bold text-center mb-4 sm:mb-8">
               {title}
             </h4>
             {renderComponent()}
@@ -125,7 +125,7 @@ export const BentoGridItem = ({
                 <div className="py-2 sm:py-4">
                   {header}
                 </div>
-                <div className="text-neutral-700 dark:text-neutral-300 text-sm sm:text-base">
+                <div className="text-lightBlue-300text-sm sm:text-base">
                   {description}
                 </div>
               </>

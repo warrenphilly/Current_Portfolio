@@ -1,0 +1,50 @@
+Warren Phillips
+647-212-7719 | warrenphillips.softdev@gmail.com | linkedin.com/in/warren-phillips-a66a88180 | github.com/warrenphilly
+Education
+Toronto Metropolitan University (Formerly Ryerson University) Toronto, On
+Bachelor (Honours) of Science in Computer Science Aug. 2019 – June 2023
+Experience
+Pavo Digital (Contract) Toronto, Ontario
+Fullstack Developer May 2023 – Feb 2024
+• Developed an AI cloud web app for accessibility and linguistics professionals using Remix, ReactJS, TypeScript,
+and AWS; ensured SLA compliance for performance and uptime
+• Integrated Keras machine learning prediction model with Tensorflow JS for enhanced user predictions
+• Implemented AWS storage and optimized backend APIs for authentication and file uploads, enhancing security adn
+improving scalability by 90%
+• Designed and enhanced UI, including a dashboard for project history and file management
+• Conducted weekly meetings and user studies, delivering the project a month early and under budget by 20%
+IMDC Labs Toronto, Ontario
+Software Engineer Sep 2022 – Apr 2023
+• Developed a Zoom-based application with ReactJS and ZoomSDK for advanced telecommunication; maintained
+SLA standards for system reliability and data security
+• Enhanced NodeJs server APIs for fast, stable IoT interfacing and programmed IoT devices with Arduino and C++
+• Worked on network protocols to ensure stable, secure data transfers for a hybrid learning platform
+CIBC Bridgetown, Barbados
+Software Engineer, Intern Jan 2019 – Aug 2019
+• Developed client-side interfaces for P2P transactions on a fintech platform generating $700M/year using React,
+Figma, and TypeScript, focusing on accessibility and brand alignment
+• Led UI/UX design for accessible, user-friendly front-end interfaces
+• Built an educational web platform for internal onboarding and training
+• Contributed to daily standups, supporting agile practices and CI/CD for effective project management and delivery
+Projects
+Swap - P2P Online Marketplace | NextJS, NodeJs, TypeScript, MongoDB, Stripe Dec 2023 – Present
+• Created a full-stack Web App Using NodeJs, facitilating communication between a NextJs client-side application
+and MongoDB Server
+• Created a full-stack Web App Using NodeJs, facitilating communication between a NextJs client-side application
+and MongoDB Server
+• implemented authentication with clerk and leveraged Zod Validation for validating form data
+• developed custom payment portal and implemented transaction handling with Stripe
+L.E.V.I. - Ai Voice Assistant | Python, Node.Js, ReactJs, ExpressJs, Vercel, OpenAi API Oct 2023 – March 2024
+• Developed L.E.V.I., an AI voice assistant with realistic emotional responses and web capabilities
+• Designed and built custom APIs with express for facilitating data compression, external API-to-API
+communication, and formatting for Speech-to-text and Text-to-speech conversion
+Poker Table Web App | ReactJS, NodeJS, ExpressJS, Tailwind CSS June 2023 – Present
+• Developed a real-time online poker game web app, utilizing WebSockets for live interaction
+Skills
+Languages: C#, Java, Python, C/C++, SQL (PostgreSQL), MongoDB JavaScript, TypeScript, HTML/CSS
+Frameworks: .NET, Node.js, Flask, React Native, Redux, VueX, NextJs, Remix, WordPress, ExpressJs, React Native,
+Developer Tools: Git, Docker, Amazon Web Services(AWS S3), Azure, Docker, Kubernetes, Visual Studio, PyCharm,
+IntelliJ, ,APIs (REST and SOAP), Figma
+Libraries: React, Vue.Js, TensorflowJS, TailwindCSS, SCSS
+Professional Skills: Exceptional Problem Solving, Excellent Communication, Fast Learner, Adaptable, Self-Motivated,
+Team Player

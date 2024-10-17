@@ -15,13 +15,13 @@ export default function Home() {
       <BackgroundBeamsWithCollision className="w-screen">
         <div
           ref={containerRef}
-          className="w-full h-full md:overflow-y-auto snap-y snap-mandatory relative z-10 bg-blue-500/10 backdrop-blur-sm "
+          className="w-full h-full overflow-y-auto snap-y snap-mandatory relative z-10 bg-blue-500/10 backdrop-blur-sm "
         >
-          <section className="w-full h-full min-h-screen snap-start snap-always relative z-10">
+          <section className="w-full h-full min-h-screen md:snap-start snap-always relative z-10">
             <Hero />
           </section>
 
-          <section className="w-full h-full min-h-screen snap-start snap-always relative z-20">
+          <section className="w-full h-full min-h-screen md:snap-start snap-always relative z-20">
             <BentoSection />
           </section>
         </div>
