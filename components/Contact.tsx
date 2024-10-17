@@ -42,7 +42,7 @@ export default function Contact() {
   };
 
   return (
-    <div className=" flex items-start justify-center bg-[#234D73] rounded-xl shadow-xl text-blue-100 p-4">
+    <div className=" flex items-start justify-center  text-blue-100 p-4">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -55,7 +55,7 @@ export default function Contact() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.2, duration: 0.5 }}
-          className="text-LightBlue-300 text-center mb-8 text-lg"
+          className="text-LightBlue-300 text-center mb-8 text-lg bg-[#234D73] rounded-xl shadow-xl p-4 "
         >
           Warning: Contacting me may result in sudden outbursts of code, 
           unexpected dad jokes, and an irresistible urge to redesign your 

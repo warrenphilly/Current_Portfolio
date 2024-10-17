@@ -114,8 +114,8 @@ export const BentoGridItem = ({
           </ModalTrigger>
         </div>
 
-        <ModalBody className="h-full  mx-auto bg-[#0f3e65]/90  backdrop-blur-2xl rounded-lg flex-1 w-full  min-h-[6rem]  flex-col  overflow-y-auto ">
-          <ModalContent className="w-full h-full max-w-4xl mx-auto bg-transparent overflow-y-auto p-4 sm:p-6 ">
+        <ModalBody className="h-full fixed  mx-auto bg-[#0f3e65]/90  backdrop-blur-2xl rounded-lg flex-1 w-full  min-h-[6rem]  flex-col  overflow-y-auto ">
+          <ModalContent className="w-full h-full max-w-[1400px] mx-auto bg-transparent overflow-y-auto p-4 sm:p-6 ">
             <h4 className="text-xl sm:text-2xl \ rounded-full p-2 sm:p-3 px-4 sm:px-5  text-lightBlue-300 w-fit    bg font-bold text-center mb-4 sm:mb-8">
               {title}
             </h4>
