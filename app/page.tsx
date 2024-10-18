@@ -5,29 +5,30 @@ import { motion } from "framer-motion";
 import Hero from "@/components/Hero";
 import { BentoSection } from "@/components/bentoSection";
 import { BackgroundBeamsWithCollision } from "@/components/ui/background-beams-with-collision";
+import DynamicBackground from "@/components/DynamicBackground";
 // import Image from "next/image";
 
 export default function Home() {
   const containerRef = useRef<HTMLDivElement>(null);
 
   return (
-    <main className="w-screen h-screen ">
-      <BackgroundBeamsWithCollision className="w-screen">
-        <div
-          ref={containerRef}
-          className="w-full h-full overflow-y-auto snap-y snap-mandatory relative z-10 bg-blue-500/10 backdrop-blur-sm "
-        >
-          <section className="w-full h-full min-h-screen md:snap-start snap-always relative z-10">
-            <Hero />
-          </section>
+    <div className="w-full">
+    <DynamicBackground />
+    <div
+      ref={containerRef}
+      className="w-full h-screen md:overflow-y-auto snap-y snap-mandatory relative z-10"
+    >
+      <section className="w-full h-screen snap-start snap-always">
+        <Hero />
+      </section>
 
-          <section className="w-full h-full min-h-screen md:snap-start snap-always relative z-20">
-            <BentoSection />
-          </section>
-        </div>
-      </BackgroundBeamsWithCollision>
-      <Lightning />
-    </main>
+        <section className="w-full h-screen snap-start snap-always">
+        <BentoSection />
+      </section>
+    </div>
+    <Lightning />
+  </div>
+
   );
 }
 
