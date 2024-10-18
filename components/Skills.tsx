@@ -9,20 +9,20 @@ const content = [
   {
     title: "Fullstack Development",
     tools: [
-      "nextjs",
-            "mongodb",
-            "shadcn",
-            "tailwindcss",
-            "supabase",
-            "vercel",
-            "docker",
-            "react",
-            "Express",
-            "AWS",
-            "vite",
-            "PostgreSQL",
-            "Prisma",
-      
+      "Nextjs",
+      "mongodb",
+      "Shadcn",
+      "tailwindcss",
+      "supabase",
+      "Vercel",
+     "Remix",
+      "Docker",
+      "react",
+      "Express",
+      "AWS",
+      "vite",
+      "PostgreSQL",
+      "Prisma",
     ],
     description:
       "I thrive on building end-to-end solutions. Whether it's crafting responsive UIs with React, designing RESTful APIs with Node.js, or optimizing database queries, I enjoy the challenge of creating seamless user experiences. I've developed and deployed full-stack applications that handle thousands of daily users.",
@@ -35,13 +35,9 @@ const content = [
             "mongodb",
             "shadcn",
             "tailwindcss",
-           
             "vercel",
             "docker",
-          
-           
             "AWS",
-            
             "PostgreSQL",
             "Prisma",
           ].map((tool) => (
@@ -58,12 +54,10 @@ const content = [
           {[
             "Remix",
             "mongodb Atlas",
-            
-            "supabase",    
+            "supabase",
             "React",
             "Express",
             "Vite",
-            
           ].map((tool) => (
             <div
               key={tool}
@@ -79,15 +73,12 @@ const content = [
   {
     title: "AI Development",
     tools: [
-      "tensorflow",
       "pytorch",
-      "huggingface",
-      "openai( GPTs, Whisper, DALL-E,tts )",
+      "tensorflow",
       "numpy",
       "YOLO( Object Detection )",
-      "SAM( Segment Anything Model )",
-
-      "keras",
+      "openai( GPTs, Whisper, DALL-E,tts )",
+     
     ],
     description:
       "I'm passionate about pushing the boundaries of AI. From training YOLO models for object detection to fine-tuning language models like GPT, I love diving into the cutting edge of machine learning. I've implemented computer vision solutions for real-time tracking and used NLP for sentiment analysis in production environments.",
@@ -96,15 +87,15 @@ const content = [
         <h2 className="text-xl font-bold mb-4">Tools i use:</h2>
         <div className=" flex flex-row flex-wrap   justify-start items-start h-fit gap-2">
           {[
-          "tensorflow",
-      "pytorch",
-      "huggingface",
-      "openai( GPTs, Whisper, DALL-E,tts )",
-      "numpy",
-      "YOLO( Object Detection )",
-      "SAM( Segment Anything Model )",
+            "tensorflow",
+            "pytorch",
+            "huggingface",
+            "openai( GPTs, Whisper, DALL-E,tts )",
+            "numpy",
+            "YOLO( Object Detection )",
+            "SAM( Segment Anything Model )",
 
-      "keras",
+            "keras",
           ].map((tool) => (
             <div
               key={tool}
@@ -157,31 +148,23 @@ const content = [
   },
   {
     title: "Backend Development",
-    tools: [
-      "nodejs",
-      "python(django)",
-      "java(spring boot)",
-      "mongodb",
-    ],
+    tools: ["nodejs", "python(django)", "java(spring boot)", "mongodb"],
     description:
       "I'm the architect behind the scenes, designing robust server-side solutions. From building scalable microservices to optimizing database queries, I ensure the backend runs like a well-oiled machine. I've implemented complex business logic, integrated third-party APIs, and optimized systems to handle high-traffic loads.",
     content: (
       <div>
         <h2 className="text-2xl font-bold mb-4">Tools i use:</h2>
         <div className=" flex flex-row flex-wrap   justify-start items-start h-fit gap-2">
-          {[
-           "nodejs",
-           "python(django)",
-           "java(spring boot)",
-           "mongodb",
-          ].map((tool) => (
-            <div
-              key={tool}
-              className="bg-darkBlue-600 text-lightBlue-300 px-2 py-1 rounded-md text-xl"
-            >
-              {tool}
-            </div>
-          ))}
+          {["nodejs", "python(django)", "java(spring boot)", "mongodb"].map(
+            (tool) => (
+              <div
+                key={tool}
+                className="bg-darkBlue-600 text-lightBlue-300 px-2 py-1 rounded-md text-xl"
+              >
+                {tool}
+              </div>
+            )
+          )}
         </div>
       </div>
     ),
@@ -195,21 +178,18 @@ const content = [
       <div>
         <h2 className="text-2xl font-bold mb-4">Tools i use:</h2>
         <div className=" flex flex-row flex-wrap   justify-start items-start h-fit gap-2">
-          {["react-native", "swift","flutter"].map(
-            (tech) => (
-              <div
-                key={tech}
-                className="bg-darkBlue-600 text-lightBlue-300 px-2 py-1 rounded-md text-xl"
-              >
-                {tech}
-              </div>
-            )
-          )}
+          {["react-native", "swift", "flutter"].map((tech) => (
+            <div
+              key={tech}
+              className="bg-darkBlue-600 text-lightBlue-300 px-2 py-1 rounded-md text-xl"
+            >
+              {tech}
+            </div>
+          ))}
         </div>
       </div>
     ),
   },
-
 ];
 
 // ... existing Skills component ...

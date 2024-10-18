@@ -31,7 +31,7 @@ const Hero = () => {
                     : "translate-y-4 opacity-0"
                 }`}
               >
-                Hey, I&apos;m
+                How's it going? I&apos;m
               </h2>
               <h1
                 className={`text-4xl sm:text-6xl md:text-8xl text-lightBlue-300 font-bold transform transition-all duration-500 delay-100 ${
@@ -40,7 +40,7 @@ const Hero = () => {
                     : "translate-y-4 opacity-0"
                 }`}
               >
-                Warren,
+                Warren
               </h1>
             </div>
 
@@ -51,7 +51,7 @@ const Hero = () => {
                   : "translate-y-4 opacity-0"
               }`}
             >
-              Software Engineer
+              Software Engineer 
             </h3>
 
             <p
@@ -61,8 +61,7 @@ const Hero = () => {
                   : "translate-y-4 opacity-0"
               } shadow-glow-sm`}
             >
-               I'm a keyboard ninja, slayer of bugs and blacksmithof digital
-              dreams. My code is so clean, it squeaks. When I'm not turning coffee
+               I'm a mostly sane software engineer. My code is so clean, it squeaks. When I'm not turning coffee
               into code, I'm dreaming up new ways to make computers do my
               bidding. 
             </p>
@@ -102,7 +101,7 @@ const Hero = () => {
 
           {/* Avatar for larger screens */}
           <div className="hidden md:flex md:w-full justify-center md:justify-end">
-            <div className="relative w-[400px] h-[400px] lg:w-[1000px] lg:h-[1000px]">
+            <div className="relative w-[300px] h-[300px] lg:w-[800px] lg:h-[800px]">
               <Image
                 src="/assets/images/pureAvatar.png"
                 alt="Warren"
