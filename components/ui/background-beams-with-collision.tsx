@@ -27,7 +27,7 @@ export const BackgroundBeamsWithCollision = ({
     <div
       ref={parentRef}
       className={cn(
-        "fixed inset-0 z-[-1] overflow-hidden bg-gradient-to-b from-[#082f49] to-neutral-800 dark:from-neutral-950 dark:to-neutral-800 relative flex items-center w-full justify-center overflow-hidden",
+        " inset-0 z-[-1] overflow-hidden bg-gradient-to-b from-[#082f49] to-neutral-800 dark:from-neutral-950 dark:to-neutral-800 relative flex items-center w-full justify-center n",
         className
       )}
     >
@@ -106,7 +106,7 @@ const CollisionMechanism = React.forwardRef<
     const animationInterval = setInterval(checkCollision, 50);
 
     return () => clearInterval(animationInterval);
-  }, [cycleCollisionDetected, containerRef]);
+  }, [cycleCollisionDetected, containerRef, parentRef]);
 
   useEffect(() => {
     if (collision.detected && collision.coordinates) {

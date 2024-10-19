@@ -193,12 +193,13 @@ const CloseIcon = () => {
 // Add it in a separate file, I've added here for simplicity
 export const useOutsideClick = (
   ref: React.RefObject<HTMLDivElement>,
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-function-type
   callback: Function
 ) => {
   useEffect(() => {
-    const listener = (event: any) => {
+    const listener = (event: MouseEvent | TouchEvent) => {
       // DO NOTHING if the element being clicked is the target element or their children
-      if (!ref.current || ref.current.contains(event.target)) {
+      if (!ref.current || ref.current.contains(event.target as Node)) {
         return;
       }
       callback(event);
