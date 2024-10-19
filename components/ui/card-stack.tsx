@@ -1,8 +1,8 @@
 "use client";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline';
-import Image from 'next/image';
+import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
+import Image from "next/image";
 
 type Card = {
   id: number;
@@ -57,7 +57,7 @@ export const CardStack = ({
         return (
           <motion.div
             key={card.id}
-            className="absolute dark:bg-black bg-white w-full h-full rounded-3xl shadow-xl border border-neutral-200 dark:border-white/[0.1] shadow-black/[0.1] dark:shadow-white/[0.05] flex flex-col md:flex-row gap-5 p-8"
+            className="absolute dark:bg-black bg-[#1B3F59] w-full h-full rounded-3xl shadow-xl flex flex-col p-8"
             style={{
               transformOrigin: "top center",
             }}
@@ -67,28 +67,28 @@ export const CardStack = ({
               zIndex: cards.length - index,
             }}
           >
-            <div className="relative w-full h-fit mb-4 border border-neutral-200 dark:border-white/[0.1] rounded-lg shadow-xl">
-              <Image
-                src={card.image}
-                alt={card.title}
-                width={300}
-                height={300}
-                objectFit="fit"
-                className="rounded-lg w-full"
-              />
-              </div>
-              <div>
-            <h2 className="text-xl font-bold mb-2 text-neutral-800 dark:text-neutral-100">
+            <h2 className="text-xl font-bold mb-4 text-lightBlue-300">
               {card.title}
             </h2>
-            <div className="flex-grow font-normal text-neutral-700 dark:text-neutral-200 w-56">
+            <div className="relative flex-grow mb-4 rounded-xl overflow-hidden pt-[20px]">
+              <div className=" flex items-center w-fit bg-green-500 justify-center pt-[20px] rounded-xl mt-[20px]">
+                
+                 <Image
+                  src={card.image}
+                  alt={card.title}
+                  layout="fill"
+                  objectFit="contain"
+                  className="rounded-xl shadow-2xl" 
+                />
+              </div>
+            </div>
+            <div className="w-full  rounded-lg l p-4 ">
               {card.content}
-                 </div>
-                 </div>
+            </div>
           </motion.div>
         );
       })}
-        
+
       <button
         className="absolute top-1/2 left-0 transform -translate-y-1/2 -translate-x-full bg-white dark:bg-black p-2 rounded-full shadow-md"
         onClick={handlePrev}

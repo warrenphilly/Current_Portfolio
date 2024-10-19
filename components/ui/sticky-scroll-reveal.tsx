@@ -63,7 +63,10 @@ export const StickyScroll = ({
     if (ref.current) {
       const containerHeight = ref.current.scrollHeight - ref.current.clientHeight;
       const scrollPosition = (index / (cardLength - 1)) * containerHeight;
-      animate(ref.current, { scrollTop: scrollPosition }, { duration: 0.5 });
+      ref.current.scrollTo({
+        top: scrollPosition,
+        behavior: 'smooth'
+      });
     }
     setActiveCard(index);
   };

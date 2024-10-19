@@ -321,7 +321,7 @@ const items = [
       </span>
     ),
     header: <SkeletonThree />,
-    className: "md:col-span-1 h-[430px]",
+    className: "md:col-span-1 h-[400px]",
     icon: <IconSignature className="h-4 w-4 text-neutral-500" />,
   },
 ];

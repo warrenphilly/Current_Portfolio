@@ -5,10 +5,7 @@ import { cn } from "@/lib/utils";
 export function Projects() {
   return (
     <div className="h-full flex flex-col items-center justify-center w-full ">
-     
-  
-        <CardStack items={PROJECTS} />
-    
+      <CardStack items={PROJECTS} />
     </div>
   );
 }
@@ -39,11 +36,23 @@ const PROJECTS = [
     title: "Project Rifty",
     image: "/assets/images/riftyProject.png",
     content: (
-      <p>
-        Rifty is a <Highlight>cutting-edge web application</Highlight> that revolutionizes 
-        the way users interact with digital content. It features a 
-        <Highlight>seamless user interface</Highlight> and powerful backend capabilities.
+      <div className="flex flex-col gap-4 ">
+      <p className="text-xl">
+        Rifty is a cutting-edge web application that
+        revolutionizes the way users interact with digital content. It features
+         seamless user interface and powerful backend
+        capabilities.
       </p>
+      <div className="flex flex-row  gap-4 items-center justify-between w-full ">
+      <button className="bg-[#111827]/30 text-lightBlue-300 px-4 py-2 rounded-lg">
+           Demo
+        </button>
+       <p>
+       Tools used: 
+     </p>
+     
+     </div>
+     </div>
     ),
   },
   {
@@ -52,9 +61,11 @@ const PROJECTS = [
     image: "/assets/images/chatbotProject.jpg",
     content: (
       <p>
-        An advanced <Highlight>AI-powered chatbot</Highlight> designed to provide 
-        intelligent responses and assist users with various tasks. It utilizes 
-        <Highlight>natural language processing</Highlight> for enhanced communication.
+        An advanced AI-powered chatbot designed to
+        provide intelligent responses and assist users with various tasks. It
+        utilizes
+        natural language processing for enhanced
+        communication.
       </p>
     ),
   },
@@ -64,9 +75,10 @@ const PROJECTS = [
     image: "/assets/images/ecommerceProject.jpg",
     content: (
       <p>
-        A robust <Highlight>e-commerce solution</Highlight> built with scalability in mind. 
-        It offers features like <Highlight>secure payments</Highlight>, inventory management, 
-        and a responsive design for optimal user experience across devices.
+        A robust <Highlight>e-commerce solution</Highlight> built with
+        scalability in mind. It offers features like{" "}
+        <Highlight>secure payments</Highlight>, inventory management, and a
+        responsive design for optimal user experience across devices.
       </p>
     ),
   },

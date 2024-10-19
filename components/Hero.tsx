@@ -18,7 +18,7 @@ const Hero = () => {
   };
 
   return (
-    <div className="overflow-hidden flex items-center justify-center min-h-screen ">
+    <div className=" mt-16 lg:mt-0 overflow-hidden flex items-center justify-center min-h-screen ">
       <div className="container mx-auto px-4 py-8 md:py-0 z-10">
         <div className="flex flex-col md:flex-row items-center justify-center h-full w-full">
           {/* Text content */}
@@ -51,11 +51,20 @@ const Hero = () => {
                   : "translate-y-4 opacity-0"
               }`}
             >
-              Software Engineer 
+              I'm a Software Engineer 
             </h3>
+            <div className="md:hidden w-56 h-56 mx-auto mr-24">
+              <Image
+                src="/assets/images/pureAvatar.png"
+                alt="Warren"
+                width={200}
+                height={200}
+                className="transition-all duration-300 w-full h-full"
+              />
+            </div>
 
             <p
-              className={`text-sm md:text-lg text-blue-300 max-w-md mx-auto md:mx-0 transform transition-all duration-500 delay-200 ${
+              className={`hidden md:block text-sm md:text-lg text-blue-300 max-w-md mx-auto md:mx-0 transform transition-all duration-500 delay-200 ${
                 mounted
                   ? "translate-y-0 opacity-100"
                   : "translate-y-4 opacity-0"
@@ -67,15 +76,7 @@ const Hero = () => {
             </p>
 
             {/* Avatar for mobile */}
-            <div className="md:hidden w-48 h-48 mx-auto my-6">
-              <Image
-                src="/assets/images/pureAvatar.png"
-                alt="Warren"
-                width={200}
-                height={200}
-                className="transition-all duration-300 w-full h-full"
-              />
-            </div>
+            
 
             <div
               className={`transform transition-all duration-500 delay-300 ${
@@ -84,7 +85,7 @@ const Hero = () => {
                   : "translate-y-4 opacity-0"
               }`}
             >
-              <div className="flex flex-col sm:flex-row gap-4 items-center justify-center md:justify-start w-full mt-5">
+              <div className="flex flex-col sm:flex-row gap-4 items-center justify-center md:justify-start w-full lg:mt-5">
                 <button className="bg-lightBlue-400 w-full sm:w-[200px] text-white px-6 py-3 rounded-2xl cursor-pointer shadow-lg font-semibold hover:bg-darkBlue-400 transition-colors duration-300">
                   Download Resume
                 </button>
@@ -96,6 +97,19 @@ const Hero = () => {
                   Check out My Stuff
                 </button>
               </div>
+
+                  <p
+              className={`text-sm block lg:hidden  mt-6 md:text-lg text-blue-300 max-w-md mx-auto md:mx-0 transform transition-all duration-500 delay-200 ${
+                mounted
+                  ? "translate-y-0 opacity-100"
+                  : "translate-y-4 opacity-0"
+              } shadow-glow-sm`}
+            >
+               I'm a mostly sane software engineer. My code is so clean, it squeaks. When I'm not turning coffee
+              into code, I'm dreaming up new ways to make computers do my
+              bidding. 
+            </p>
+
             </div>
           </div>
 
