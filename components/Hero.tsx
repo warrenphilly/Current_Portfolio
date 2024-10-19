@@ -31,7 +31,7 @@ const Hero = () => {
                     : "translate-y-4 opacity-0"
                 }`}
               >
-                How's it going? I&apos;m
+                How&apos;s it going? I&apos;m
               </h2>
               <h1
                 className={`text-4xl sm:text-6xl md:text-8xl text-lightBlue-300 font-bold transform transition-all duration-500 delay-100 ${
@@ -51,7 +51,7 @@ const Hero = () => {
                   : "translate-y-4 opacity-0"
               }`}
             >
-              I'm a Software Engineer 
+              I&apos;m a Software Engineer 
             </h3>
             <div className="md:hidden w-56 h-56 mx-auto mr-24">
               <Image
@@ -70,8 +70,8 @@ const Hero = () => {
                   : "translate-y-4 opacity-0"
               } shadow-glow-sm`}
             >
-               I'm a mostly sane software engineer. My code is so clean, it squeaks. When I'm not turning coffee
-              into code, I'm dreaming up new ways to make computers do my
+               I&apos;m a mostly sane software engineer. My code is so clean, it squeaks. When I&apos;m not turning coffee
+              into code, I&apos;m dreaming up new ways to make computers do my
               bidding. 
             </p>
 
@@ -105,8 +105,8 @@ const Hero = () => {
                   : "translate-y-4 opacity-0"
               } shadow-glow-sm`}
             >
-               I'm a mostly sane software engineer. My code is so clean, it squeaks. When I'm not turning coffee
-              into code, I'm dreaming up new ways to make computers do my
+               I&apos;m a mostly sane software engineer. My code is so clean, it squeaks. When I&apos;m not turning coffee
+              into code, I&apos;m dreaming up new ways to make computers do my
               bidding. 
             </p>
 

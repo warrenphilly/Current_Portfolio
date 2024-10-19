@@ -29,8 +29,8 @@ export default function Home() {
 
         <section className="w-full h-screen snap-start snap-always">
         <BentoSection />
-        <Footer />
-        
+        {/* <Footer />
+         */}
       </section>
       
     </div>

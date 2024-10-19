@@ -1,5 +1,5 @@
 import React from 'react';
-import Image from "next/image";
+
 import { Timeline } from './ui/timeline';
 import { FaGraduationCap, FaBriefcase, FaCode } from 'react-icons/fa';
 

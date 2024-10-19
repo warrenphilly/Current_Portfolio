@@ -1,24 +1,12 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect } from "react";
+
 import { motion } from "framer-motion";
-import { FiSend, FiUser, FiMail, FiMessageSquare } from "react-icons/fi";
+
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 export default function Header() {
-  const handleScrollToBento = () => {
-    const bentoSection = document.getElementById("bento-section");
-    if (bentoSection) {
-      bentoSection.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-  const handleScrollToHero = () => {
-    const heroSection = document.getElementById("hero-section");
-    if (heroSection) {
-      heroSection.scrollIntoView({ behavior: "smooth" });
-    }
-  };
 
   return (
     <header className="fixed  top-0 left-0 w-full z-50  backdrop-blur-xl text-white py-4">
@@ -34,7 +22,7 @@ export default function Header() {
             className="flex items-center justify-center space-x-6 "
           >
             <motion.a
-              href="https://github.com/yourusername"
+              href="https://github.com/warrenphilly"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.1 }}
@@ -44,7 +32,7 @@ export default function Header() {
               <FaGithub size={30} />
             </motion.a>
             <motion.a
-              href="https://linkedin.com/in/yourusername"
+              href="https://www.linkedin.com/in/warren-phillips-a66a88180/"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.1 }}

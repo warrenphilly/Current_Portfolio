@@ -208,18 +208,18 @@ const SkeletonFour = () => {
   );
 };
 const SkeletonFive = () => {
-  const variants = {
-    initial: {
-      x: 0,
-    },
-    animate: {
-      x: 10,
-      rotate: 5,
-      transition: {
-        duration: 0.2,
-      },
-    },
-  };
+  // const variants = {
+  //   initial: {
+  //     x: 0,
+  //   },
+  //   animate: {
+  //     x: 10,
+  //     rotate: 5,
+  //     transition: {
+  //       duration: 0.2,
+  //     },
+  //   },
+  // };
   const variantsSecond = {
     initial: {
       x: 0,

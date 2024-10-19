@@ -35,6 +35,7 @@ export default function Contact() {
       
       setSubmitStatus('success');
     } catch (error) {
+      console.log(error);
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);
@@ -156,7 +157,7 @@ export default function Contact() {
           className="mt-8 flex justify-center space-x-6"
         >
           <motion.a
-            href="https://github.com/yourusername"
+            href="https://github.com/warrenphilly"
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ scale: 1.1 }}
@@ -166,7 +167,7 @@ export default function Contact() {
             <FaGithub size={30} />
           </motion.a>
           <motion.a
-            href="https://linkedin.com/in/yourusername"
+            href="https://www.linkedin.com/in/warren-phillips-a66a88180/"
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ scale: 1.1 }}
