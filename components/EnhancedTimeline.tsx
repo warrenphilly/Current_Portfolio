@@ -1,6 +1,6 @@
-
 import React from 'react';
-import { motion } from 'framer-motion';
+import Image from "next/image";
+import { Timeline } from './ui/timeline';
 import { FaGraduationCap, FaBriefcase, FaCode } from 'react-icons/fa';
 
 interface TimelineItem {
@@ -12,7 +12,6 @@ interface TimelineItem {
 }
 
 const timelineData: TimelineItem[] = [
- 
   {
     type: 'work',
     title: 'Fullstack Developer',
@@ -65,52 +64,34 @@ const iconMap = {
 };
 
 export const EnhancedTimeline: React.FC = () => {
-  return (
-    <div className="py-16 bg-navy-900/70 backdrop-blur-lg text-blue-100 rounded-xl shadow-xl">
-      <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold mb-12 text-center text-blue-300">My Journey</h2>
-        <div className="relative">
-          {/* Vertical line */}
-          <div className="absolute left-1/2 transform -translate-x-1/2 w-0.5 h-full bg-blue-400 opacity-20" />
-          
-          {timelineData.map((item, index) => {
-            const Icon = iconMap[item.type];
-            return (
-              <motion.div
-                key={index}
-                className={`mb-12 flex justify-between items-center w-full ${
-                  index % 2 === 0 ? 'flex-row-reverse' : ''
-                }`}
-                initial={{ opacity: 0, y: 50 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.2 }}
-              >
-                <div className={`w-5/12 ${index % 2 === 0 ? 'text-right' : ''}`}>
-                  <motion.div
-                    className="bg-navy-800 p-6 rounded-lg shadow-lg border border-blue-500"
-                    whileHover={{ scale: 1.05, boxShadow: '0 0 20px rgba(59, 130, 246, 0.5)' }}
-                    transition={{ type: 'spring', stiffness: 300 }}
-                  >
-                    <h3 className="text-xl font-semibold mb-2 text-blue-300">{item.title}</h3>
-                    <h4 className="text-lg mb-2 text-blue-400">{item.organization}</h4>
-                    <p className="text-sm mb-4 text-blue-200">{item.period}</p>
-                    <ul className="list-disc list-inside text-sm">
-                      {item.description.map((desc, i) => (
-                        <li key={i} className="mb-1 text-blue-100">{desc}</li>
-                      ))}
-                    </ul>
-                  </motion.div>
-                </div>
-                <div className="w-2/12 flex justify-center">
-                  <div className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center shadow-lg">
-                    <Icon className="text-white text-2xl" />
-                  </div>
-                </div>
-                <div className="w-5/12" />
-              </motion.div>
-            );
-          })}
+  const formattedData = timelineData.map((item) => ({
+    title: item.period,
+    content: (
+      <div>
+        <p className="text-lightBlue-300 text-xs md:text-4xl font-normal mb-4 ">
+          {item.title} at {item.organization}      </p>
+        <div className='flex justify-start lg:items-center gap-2 w-fit bg-navy-900 px-5 rounded-full text-lightBlue-500 mb-5'>
+        {React.createElement(iconMap[item.type], { className: "text-blue-500 text-xl" })}
+        {item.type.charAt(0).toUpperCase() + item.type.slice(1)}
+   
         </div>
+        <div className="mb-8">
+          {item.description.map((desc, index) => (
+            <div key={index} className="flex gap-2 items-center text-lightBlue-200 text-lg lg:text-xl">
+              <span className="text-lightBlue-500 mr-2">▹</span> {desc}
+            </div>
+          ))}
+        </div>
+       
+      </div>
+    ),
+  }));
+
+  return (
+    <div className="  text-blue-100 rounded-xl ">
+      <div className="container mx-auto px-4">
+     
+        <Timeline data={formattedData} />
       </div>
     </div>
   );

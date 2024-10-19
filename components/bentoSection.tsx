@@ -35,15 +35,19 @@ export function BentoSection() {
 }
 
 const SkeletonOne = () => {
-  
-
   return (
     <motion.div
       initial="initial"
       whileHover="animate"
-      className="flex flex-1 w-full bg-red-300 rounded-lg h-full bg-white/40 backdrop-blur-lg   min-h-[6rem] dark:bg-dot-white/[0.2] bg-dot-black/[0.2] flex-col space-y-2 "
+      className="flex flex-1 w-full  rounded-lg h-full bg-[#1C2934] backdrop-blur-lg   min-h-[6rem] dark:bg-dot-white/[0.2] bg-dot-black/[0.2] flex-col space-y-2 "
     >
-     <Image src="/assets/images/avatarPeaceful.png" alt="avatar" height="100" width="100" className=" h-full w-full border-neutral-400  ml-2" />
+      <Image
+        src="/assets/images/avatarPeaceful.png"
+        alt="avatar"
+        height="100"
+        width="100"
+        className=" h-full w-full border-neutral-400  ml-2"
+      />
     </motion.div>
   );
 };
@@ -73,6 +77,11 @@ const SkeletonTwo = () => {
     "bg-red-500 dark:bg-red-800",
     "bg-yellow-200 dark:bg-yellow-800",
     "bg-green-200 dark:bg-green-800",
+    "bg-blue-200 dark:bg-blue-800",
+    "bg-red-500 dark:bg-red-800",
+    "bg-yellow-200 dark:bg-yellow-800",
+    "bg-green-200 dark:bg-green-800",
+  
   ];
 
   return (
@@ -80,21 +89,20 @@ const SkeletonTwo = () => {
       initial="initial"
       animate="animate"
       whileHover="hover"
-      className="flex flex-1 w-full h-full min-h-[6rem] bg-grey-600   flex-col space-y-2"
-    ><div className=" p-2 bg-gray-500 rounded-lg">
-      {colors.map((color, i) => (
-        <motion.div
-          key={"skeleton-two" + i}
-          variants={variants}
-          style={{
-            maxWidth: Math.random() * (100 - 40) + 40 + "%",
-          }}
-          className={`flex flex-row rounded-full my-1  dark:border-white/[0.2] p-2 items-center space-x-2 ${color} w-full h-4`}
-        >
-         
-        </motion.div>
-      ))}
-       </div>
+      className="flex flex-1 w-full h-full min-h-[6rem]  flex-col space-y-2"
+    >
+      <div className=" p-2 bg-[#1C2934] min-h-[200px] rounded-lg">
+        {colors.map((color, i) => (
+          <motion.div
+            key={"skeleton-two" + i}
+            variants={variants}
+            style={{
+              maxWidth: Math.random() * (100 - 40) + 40 + "%",
+            }}
+            className={`flex flex-row rounded-full my-1  dark:border-white/[0.2] p-2 items-center space-x-2 ${color} w-full h-4`}
+          ></motion.div>
+        ))}
+      </div>
     </motion.div>
   );
 };
@@ -117,7 +125,7 @@ const SkeletonThree = () => {
         repeat: Infinity,
         repeatType: "reverse",
       }}
-      className="flex bg-white/80 backdrop-blur-lg rounded-lg flex-1 w-full h-full min-h-[6rem] dark:bg-dot-white/[0.2]  bg-dot-black/[0.2] flex-col space-y-2"
+      className="flex bg-white/80  backdrop-blur-lg rounded-lg flex-1 w-full min-h-[12rem] dark:bg-dot-white/[0.2]  bg-dot-black/[0.2] flex-col space-y-2"
       style={{
         background:
           "linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab)",
@@ -154,27 +162,24 @@ const SkeletonFour = () => {
       initial="initial"
       animate="animate"
       whileHover="hover"
-      className="flex flex-1  bg-white/40 backdrop-blur-lg rounded-lg w-full h-[340px]  dark:bg-dot-white/[0.2] bg-dot-black/[0.2] flex-row space-x-2"
+      className="flex flex-1  bg-[#1C2934] backdrop-blur-lg rounded-lg w-full h-[300px] lg:h-[340px]  dark:bg-dot-white/[0.2] bg-dot-black/[0.2] flex-row "
     >
       <motion.div
         variants={first}
-        className="h-full w-1/3 rounded-2xl bg-[#fafafa] shadow-lg p-2 dark:bg-black dark:border-white/[0.1] border border-neutral-200 flex flex-col items-center justify-center"
+        className="h-full w-1/3 rounded-2xl bg-[#fafafa] shadow-lg p-2 dark:bg-black dark:border-white/[0.1] border border-neutral-200 hidden lg:flex flex-col items-center justify-center"
       >
         <Image
           src="/assets/images/riftyProject.png"
           alt="avatar"
           height="100"
           width="100"
-          className="rounded-lg h-full w-full"
+          className="rounded-lg h-full w-full "
         />
-        
-        <p className="border  w-full bg-warm-600 text-white dark:bg-red-900/20  text-lg rounded-lg">
-          Rifty.co
-        </p>
-      </motion.div>
+
       
-      <motion.div className="h-full  relative z-20 w-1/3 rounded-2xl bg-white p-4 dark:bg-black dark:border-white/[0.1] border border-neutral-200 flex flex-col items-center justify-center">
-     
+      </motion.div>
+
+      <motion.div className="h-full w-full lg:w-1/3 relative z-20 rounded-2xl bg-white p-4 dark:bg-black dark:border-white/[0.1] border border-neutral-200 flex flex-col items-center justify-center">
         <Image
           src="/assets/images/riftyProject.png"
           alt="avatar"
@@ -182,17 +187,13 @@ const SkeletonFour = () => {
           width="100"
           className="rounded-lg h-full w-full"
         />
-        
-        <p className="border  w-full bg-warm-600 text-white dark:bg-red-900/20  text-lg rounded-lg">
-          Rifty.co
-        </p>
+
       </motion.div>
-      
+
       <motion.div
         variants={second}
-        className="h-full w-1/3  rounded-2xl bg-white p-4 dark:bg-black dark:border-white/[0.1] border border-neutral-200 flex flex-col items-center justify-center"
+        className="h-full w-1/3  rounded-2xl bg-white p-4 dark:bg-black dark:border-white/[0.1] border border-neutral-200 hidden lg:flex flex-col items-center justify-center"
       >
-   
         <Image
           src="/assets/images/riftyProject.png"
           alt="avatar"
@@ -200,19 +201,9 @@ const SkeletonFour = () => {
           width="100"
           className="rounded-lg h-full w-full"
         />
-        
-        <p className="border  w-full bg-warm-600 text-white dark:bg-red-900/20 text-lg rounded-lg">
-          Rifty.co
-        </p>
+
+     
       </motion.div>
-
-
-
-
-
-
-
-
     </motion.div>
   );
 };
@@ -246,20 +237,32 @@ const SkeletonFive = () => {
     <motion.div
       initial="initial"
       whileHover="animate"
-      className="flex bg-white/40 backdrop-blur-lg rounded-lg flex-1 w-full h-full min-h-[6rem] dark:bg-dot-white/[0.2] bg-dot-black/[0.2] flex-col space-y-2"
+      className="flex bg-[#1C2934] backdrop-blur-lg rounded-lg flex-1 w-full h-full min-h-[200px] dark:bg-dot-white/[0.2] bg-dot-black/[0.2] flex-col space-y-2 justify-center p-4"
     >
       <motion.div
-        variants={variants}
-        className="flex flex-row rounded-2xl border border-neutral-100 dark:border-white/[0.2] p-2  items-start space-x-2 bg-white dark:bg-black"
+        variants={variantsSecond}
+        className="flex flex-row rounded-2xl border text-start border-neutral-100 dark:border-white/[0.2] p-2 items-start justify-start space-x-2 w-[90%] mr-auto bg-white dark:bg-black"
       >
-     
+        <div className="h-6 w-6 rounded-full bg-gradient-to-r from-pink-500 to-violet-500 flex-shrink-0 " />
+        <p className="text-xs text-neutral-500">
+          Hey, I found your super cool website and i wanna work with you.
+        </p>
       </motion.div>
+
       <motion.div
         variants={variantsSecond}
-        className="flex flex-row rounded-full border border-neutral-100 dark:border-white/[0.2] p-2 items-center justify-end space-x-2 w-3/4 ml-auto bg-white dark:bg-black"
+        className="flex flex-row rounded-2xl border border-neutral-100 dark:border-white/[0.2] p-2 items-center justify-end space-x-2 w-7/8 ml-auto bg-white dark:bg-black"
       >
-        <p className="text-xs text-neutral-500">Use PHP.</p>
-        <div className="h-6 w-6 rounded-full bg-gradient-to-r from-pink-500 to-violet-500 flex-shrink-0" />
+        <p className="text-xs text-neutral-500">You had me at hey</p>
+        <div className="flex flex-1 w-7  rounded-full h-7 bg-gray-400 backdrop-blur-lg  items-center justify-center  dark:bg-dot-white/[0.2] bg-dot-black/[0.2] flex-col  ">
+          <Image
+            src="/assets/images/avatarPeaceful.png"
+            alt="avatar"
+            height="100"
+            width="100"
+            className=" h-[80%] w-[80%] border-neutral-400  "
+          />
+        </div>
       </motion.div>
     </motion.div>
   );
@@ -268,9 +271,7 @@ const items = [
   {
     title: "About me",
     description: (
-      <span className="text-lg">
-        Discover my lore, learn my secrets...
-      </span>
+      <span className="text-lg">Discover my lore, learn my secrets...</span>
     ),
     header: <SkeletonOne />,
     className: "md:col-span-1 md:row-span-2 md:h-[500px] ",
@@ -280,7 +281,8 @@ const items = [
     title: "My Skills",
     description: (
       <span className="text-lg">
-        Dive into the many mystic arts I have trained in. Take a peep into my tool box.
+        Dive into the many mystic arts I have trained in. Take a peep into my
+        tool box.
       </span>
     ),
     header: <SkeletonTwo />,
@@ -297,13 +299,13 @@ const items = [
     header: <SkeletonFive />,
     className: "md:col-span-1",
     icon: <IconBoxAlignRightFilled className="h-4 w-4 text-neutral-500" />,
-
   },
   {
     title: "My Projects",
     description: (
       <span className="text-lg">
-        I know you&apos;re curious about what I&apos;ve been up to. Here&apos;s some of my work.
+        I know you&apos;re curious about what I&apos;ve been up to. Here&apos;s
+        some of my work.
       </span>
     ),
     header: <SkeletonFour />,
@@ -319,7 +321,7 @@ const items = [
       </span>
     ),
     header: <SkeletonThree />,
-    className: "md:col-span-1 h-[300px]",
+    className: "md:col-span-1 h-[430px]",
     icon: <IconSignature className="h-4 w-4 text-neutral-500" />,
   },
 ];
