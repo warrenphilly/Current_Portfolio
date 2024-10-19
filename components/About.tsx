@@ -1,4 +1,4 @@
-import EnhancedTimeline from "./EnhancedTimeline";
+
 import Image from 'next/image';
 
 export default function About() {
@@ -17,12 +17,12 @@ export default function About() {
         </div>
         <div className="flex-1  bg-[#1B3F59]/40 rounded-2xl p-5 shadow-2xl">
           <p className="mb-4 text-2xl text-lightBlue-300 p-5 ">
-            Greetings, fellow humans and AI overlords! I'm Warren Phillips, a 23-year-old software engineer with a 
+            Greetings, fellow humans and AI overlords! I&apos;m Warren Phillips, a 23-year-old software engineer with a 
             passion for turning caffeine into code and dreams into digital reality.
           </p>
           <p className="mb-4 text-2xl text-lightBlue-300  px-5">
-            When I'm not busy trying to convince my computer that it's not smarter than me (yet), I'm on a mission 
-            to build the coolest, quirkiest, and most unnecessarily complex solutions to problems you didn't even 
+            When I&apos;m not busy trying to convince my computer that it&apos;s not smarter than me (yet), I&apos;m on a mission 
+            to build the coolest, quirkiest, and most unnecessarily complex solutions to problems you didn&apos;t even 
             know you had!
           </p>
         </div>
@@ -45,15 +45,15 @@ export default function About() {
       </div>
       
       <blockquote className="mb-12 text-xl italic text-center text-lightBlue-600 ">
-        "In the face of ambiguity, refuse the temptation to guess. There should be one-- and preferably only one 
-        --obvious way to do it. Although that way may not be obvious at first unless you're Dutch."
+        &quot;In the face of ambiguity, refuse the temptation to guess. There should be one-- and preferably only one 
+        --obvious way to do it. Although that way may not be obvious at first unless you&apos;re Dutch.&quot;
         <footer className="text-right text-lightBlue-300 mt-2">- The Zen of Python</footer>
       </blockquote>
 
       
       <p className="mt-12 text-xl text-center text-navy-200 ">
-        So, buckle up, fellow code enthusiasts! Together, we'll build, break, fix, and laugh our way through 
-        the digital frontier. Let's make some software magic! 🚀✨
+        So, buckle up, fellow code enthusiasts! Together, we&apos;ll build, break, fix, and laugh our way through 
+        the digital frontier. Let&apos;s make some software magic! 🚀✨
       </p>
     </div>
   );

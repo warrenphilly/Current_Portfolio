@@ -4,7 +4,7 @@ import { useRef, useState, useCallback, useMemo, useEffect } from "react";
 import { motion } from "framer-motion";
 import Hero from "@/components/Hero";
 import { BentoSection } from "@/components/bentoSection";
-import { BackgroundBeamsWithCollision } from "@/components/ui/background-beams-with-collision";
+
 import DynamicBackground from "@/components/DynamicBackground";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -29,8 +29,8 @@ export default function Home() {
 
         <section className="w-full h-screen snap-start snap-always">
         <BentoSection />
-        {/* <Footer />
-         */}
+        <Footer />
+        
       </section>
       
     </div>
@@ -74,7 +74,8 @@ export function Lightning() {
       path += ` L ${x} ${y}`;
     }
     return path;
-  }, [isFlashing]);
+  }, [width, height]);
+  // add something here to re generate new lightning path each time
 
   const lightningPaths = useMemo(() => {
     return Array.from({ length: 3 }, () => generateLightningPath());

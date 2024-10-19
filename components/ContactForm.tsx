@@ -26,7 +26,9 @@ export default function ContactForm() {
     try {
       await new Promise(resolve => setTimeout(resolve, 2000)); // Simulate API call
       setSubmitStatus('success');
-    } catch (error) {
+    } catch (error) 
+    {
+      console.log(error);
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);
