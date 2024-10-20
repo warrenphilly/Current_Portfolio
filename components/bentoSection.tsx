@@ -12,11 +12,12 @@ import {
 } from "@tabler/icons-react";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Footer from "./Footer";
 
 export function BentoSection() {
   return (
-    <div id="bento-section" className="w-full flex justify-center items-center">
-      <div className="w-full max-w-7xl p-4 sm:p-8 rounded-xl   m-4 sm:m-10">
+    <div id="bento-section" className="w-full md:h-full flex flex-col justify-center  items-center">
+      <div className="w-full md:h-full  max-w-lg md:max-w-7xl pb-4 md:pb-0">
         <BentoGrid className="mx-auto gap-4 sm:gap-2  ">
           {items.map((item, i) => (
             <BentoGridItem
@@ -28,8 +29,11 @@ export function BentoSection() {
               icon={item.icon}
             />
           ))}
+           
         </BentoGrid>
+       
       </div>
+      <Footer />
     </div>
   );
 }
@@ -39,14 +43,14 @@ const SkeletonOne = () => {
     <motion.div
       initial="initial"
       whileHover="animate"
-      className="flex flex-1 w-full  rounded-lg h-full bg-[#1C2934] backdrop-blur-lg   min-h-[6rem] dark:bg-dot-white/[0.2] bg-dot-black/[0.2] flex-col space-y-2 "
+      className="flex flex-1 w-full  md:rounded-lg h-full backdrop-blur-lg  min-h-[6rem] dark:bg-dot-white/[0.2] bg-dot-black/[0.2] flex-col space-y-2 items-center justify-end "
     >
       <Image
         src="/assets/images/avatarPeaceful.png"
         alt="avatar"
-        height="100"
-        width="100"
-        className=" h-full w-full border-neutral-400  ml-2"
+        height="200"
+        width="200"
+        className=" md:h-fit md:w-fit border-neutral-400 items-center justify-center pl-5 ml-2 rounded-full bg-[#1C2934] "
       />
     </motion.div>
   );

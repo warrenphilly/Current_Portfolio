@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
 import { useMotionValueEvent, useScroll, useAnimate } from "framer-motion";
 import { motion } from "framer-motion";
 
@@ -57,26 +57,46 @@ export const StickyScroll = ({
     setActiveCard(index);
   };
 
+  useEffect(() => {
+    const handleWheel = (e: WheelEvent) => {
+      e.preventDefault();
+      const direction = e.deltaY > 0 ? 1 : -1;
+      const newIndex = Math.max(0, Math.min(cardLength - 1, activeCard + direction));
+      handleCardClick(newIndex);
+    };
+
+    const container = ref.current;
+    if (container) {
+      container.addEventListener('wheel', handleWheel, { passive: false });
+    }
+
+    return () => {
+      if (container) {
+        container.removeEventListener('wheel', handleWheel);
+      }
+    };
+  }, [activeCard, cardLength]);
+
   return (
     <motion.div
       animate={{
         backgroundColor: backgroundColors[activeCard % backgroundColors.length],
       }}
-      className="h-[50rem] bg-blue-500 overflow-y-auto flex justify-center relative space-x-10 rounded-md p-10"
+      className="h-[50rem] overflow-y-auto flex justify-center relative space-x-10 rounded-md p-10"
       ref={ref}
     >
       <div
         className="div relative flex items-start px-4 w-full h-full"
         ref={scope}
       >
-        <div className="w-full h-full">
+        <div className="w-full h-full snap-y flex flex-col gap-10">
           {content.map((item, index) => (
             <div
               key={item.title + index}
-              className="w-full flex flex-col items-center justify-center mb-10 py-5"
+              className="w-full flex flex-col items-center justify-center py-5 snap-start "
             >
-              <div className="flex flex-col lg:flex-row  justify-center items-center lg:h-[400px] w-full gap-10">
-                <div className="flex flex-col gap-2 lg:w-full">
+              <div className="flex flex-col lg:flex-row justify-center items-center w-full gap-10  ">
+                <div className="flex flex-col gap-2 lg:w-full ">
                   <motion.h2
                     initial={{
                       opacity: 0,
@@ -102,7 +122,7 @@ export const StickyScroll = ({
                   </motion.p>
                 </div>
 
-                <div className="flex flex-col justify-end flex-wrap h-fit max-w-[400px] gap-3">
+                <div className="flex flex-col justify-start flex-wrap h-full w-[400px]  gap-3">
                   <motion.h2
                     initial={{
                       opacity: 0,
@@ -114,10 +134,10 @@ export const StickyScroll = ({
                   >
                     My Tools
                   </motion.h2>
-                  <div className="flex flex-row justify-start flex-wrap h-fit w-[400px] gap-3">
+                  <div className="flex flex-row justify-start flex-wrap  md:h-fit gap-3 ">
                     {item.tools?.map((tool) => (
                       <div
-                        className=" bg-darkBlue-400 shadow-md text-white rounded-lg px-2 py-1 text-md"
+                        className="bg-darkBlue-400 shadow-md text-white rounded-lg px-2 py-1 text-sm"
                         key={tool}
                       >
                         {tool}
@@ -129,7 +149,7 @@ export const StickyScroll = ({
             </div>
           ))}
           {/* Extra padded div to prop up the final index */}
-          <div className="h-screen" />
+          <div className="h-[600px]" />
         </div>
       </div>
     </motion.div>

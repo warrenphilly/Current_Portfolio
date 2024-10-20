@@ -52,12 +52,12 @@ export const CardStack = ({
   };
 
   return (
-    <div className="relative h-full w-full">
+    <div className="relative h-[80%] w-full py-10">
       {cards.map((card, index) => {
         return (
           <motion.div
             key={card.id}
-            className="absolute dark:bg-black bg-[#1B3F59] w-full h-full rounded-3xl shadow-xl flex flex-col p-8"
+            className="absolute dark:bg-black bg-[#0e1720] border border-neutral-400  w-full h-full rounded-3xl shadow-xl flex flex-col p-8"
             style={{
               transformOrigin: "top center",
             }}
@@ -70,6 +70,20 @@ export const CardStack = ({
             <h2 className="text-xl font-bold mb-4 text-lightBlue-300">
               {card.title}
             </h2>
+            <button
+        className="absolute top-1/2 left-0 transform -translate-y-1/2 -translate-x-full bg-white dark:bg-black p-2 rounded-full shadow-md"
+        onClick={handlePrev}
+        aria-label="Previous project"
+      >
+        <ChevronLeftIcon className="h-6 w-6 text-gray-600 dark:text-gray-300" />
+      </button>
+      <button
+        className="absolute top-1/2 right-0 transform -translate-y-1/2 translate-x-full bg-white dark:bg-black p-2 rounded-full shadow-md"
+        onClick={handleNext}
+        aria-label="Next project"
+      >
+        <ChevronRightIcon className="h-6 w-6 text-gray-600 dark:text-gray-300" />
+      </button>
             <div className="relative flex-grow mb-4 rounded-xl overflow-hidden pt-[20px]">
               <div className=" flex items-center w-fit bg-green-500 justify-center pt-[20px] rounded-xl mt-[20px]">
                 
@@ -82,7 +96,7 @@ export const CardStack = ({
                 />
               </div>
             </div>
-            <div className="w-full  rounded-lg l p-4 ">
+            <div className="w-full  rounded-lg l p-4 text-lightBlue-400 ">
               {card.content}
             </div>
           </motion.div>

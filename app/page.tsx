@@ -5,7 +5,7 @@ import Hero from "@/components/Hero";
 import { BentoSection } from "@/components/bentoSection";
 import DynamicBackground from "@/components/DynamicBackground";
 import Header from "@/components/Header";
-import Footer from "@/components/Footer";
+
 import Lightning from "@/components/Lightning";
 
 export default function Home() {
@@ -23,12 +23,13 @@ export default function Home() {
           <Hero />
         </section>
 
-        <section className="w-full h-screen snap-start snap-always">
+        <section className="w-full h-screen snap-start snap-always md:flex items-center justify-center md:pt-24">
           <BentoSection />
-          <Footer />
+        
         </section>
       </div>
       <Lightning />
+     
     </div>
   );
 }
