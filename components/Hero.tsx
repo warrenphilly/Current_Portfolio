@@ -34,7 +34,7 @@ const Hero = () => {
                 How&apos;s it going? I&apos;m
               </h2>
               <h1
-                className={`text-4xl sm:text-6xl md:text-8xl text-lightBlue-300 font-bold transform transition-all duration-500 delay-100 ${
+                className={`text-4xl sm:text-6xl md:text-8xl text-lightBlue-400 font-bold transform transition-all duration-500 delay-100 ${
                   mounted
                     ? "translate-y-0 opacity-100"
                     : "translate-y-4 opacity-0"
@@ -45,7 +45,7 @@ const Hero = () => {
             </div>
 
             <h3
-              className={`text-xl md:text-4xl text-lightBlue-600 font-semibold transform transition-all duration-500 delay-100 ${
+              className={`text-xl md:text-4xl text-lightBlue-200  font-semibold transform transition-all duration-500 delay-100 ${
                 mounted
                   ? "translate-y-0 opacity-100"
                   : "translate-y-4 opacity-0"
@@ -64,7 +64,7 @@ const Hero = () => {
             </div>
 
             <p
-              className={`hidden md:block text-sm md:text-lg text-blue-300 max-w-md mx-auto md:mx-0 transform transition-all duration-500 delay-200 ${
+              className={`hidden md:block text-sm md:text-lg text-white max-w-md mx-auto md:mx-0 transform transition-all duration-500 delay-200 ${
                 mounted
                   ? "translate-y-0 opacity-100"
                   : "translate-y-4 opacity-0"
@@ -86,7 +86,7 @@ const Hero = () => {
               }`}
             >
               <div className="flex flex-col sm:flex-row gap-4 items-center justify-center md:justify-start w-full lg:mt-5">
-                <button className="bg-lightBlue-400 w-full sm:w-[200px] text-white px-6 py-3 rounded-2xl cursor-pointer shadow-lg font-semibold hover:bg-darkBlue-400 transition-colors duration-300">
+                <button className="bg-lightBlue-300 w-full sm:w-[200px] text-white px-6 py-3 rounded-2xl cursor-pointer shadow-lg font-semibold hover:bg-darkBlue-400 transition-colors duration-300">
                   Download Resume
                 </button>
                 <button

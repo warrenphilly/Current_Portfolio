@@ -129,7 +129,7 @@ const SkeletonThree = () => {
         repeat: Infinity,
         repeatType: "reverse",
       }}
-      className="flex bg-white/80  backdrop-blur-lg rounded-lg flex-1 w-full min-h-[12rem] dark:bg-dot-white/[0.2]  bg-dot-black/[0.2] flex-col space-y-2"
+      className="flex bg-white/80  backdrop-blur-lg rounded-lg flex-1 w-full min-h-[12rem]  dark:bg-dot-white/[0.2]  bg-dot-black/[0.2] flex-col space-y-2"
       style={{
         background:
           "linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab)",

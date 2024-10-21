@@ -125,7 +125,7 @@ export const BentoGridItem = ({
                 <div className="py-2 sm:py-4">
                   {header}
                 </div>
-                <div className="text-lightBlue-300 text-sm sm:text-base">
+                <div className="text-white text-sm sm:text-base">
                   {description}
                 </div>
               </>

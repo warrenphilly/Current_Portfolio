@@ -11,7 +11,7 @@ export default function Header() {
   return (
     <header className="fixed  top-0 left-0 w-full z-50  backdrop-blur-xl text-white py-4">
       <div className="container mx-auto px-4 flex justify-between items-center">
-        <Link href="/" className="text-2xl text-blue-300 hidden md:block">
+        <Link href="/" className="text-2xl text-lightBlue-200  hidden md:block">
           Warren Phillips
         </Link>
         <nav>
@@ -27,7 +27,7 @@ export default function Header() {
               rel="noopener noreferrer"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
-              className="text-blue-300 hover:text-blue-100 transition-colors duration-300 "
+              className="text-lightBlue-200 hover:text-blue-100 transition-colors duration-300 "
             >
               <FaGithub size={30} />
             </motion.a>
@@ -37,13 +37,13 @@ export default function Header() {
               rel="noopener noreferrer"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
-              className="text-blue-300 hover:text-blue-100 transition-colors duration-300"
+              className="text-lightBlue-200  hover:text-blue-100 transition-colors duration-300"
             >
               <FaLinkedin size={30} />
             </motion.a>
             <motion.a
               href="#projects"
-              className="text-[#1B3F59] hidden md:block  px-3 py-2 bg-blue-300 rounded-2xl text-sm font-medium"
+              className="text-[#1B3F59] hidden md:block  px-3 py-1 bg-lightBlue-200 rounded-lg text-sm font-semibold"
             >
               Download Resume
             </motion.a>
