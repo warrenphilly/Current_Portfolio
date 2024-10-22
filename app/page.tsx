@@ -3,7 +3,7 @@
 import { useRef } from "react";
 import Hero from "@/components/Hero";
 import { BentoSection } from "@/components/bentoSection";
-import DynamicBackground from "@/components/DynamicBackground";
+// import DynamicBackground from "@/components/DynamicBackground";
 import Header from "@/components/Header";
 
 import Lightning from "@/components/Lightning";
@@ -13,7 +13,7 @@ export default function Home() {
 
   return (
     <div className="w-full">
-      <DynamicBackground />
+      {/* <DynamicBackground /> */}
       <div
         ref={containerRef}
         className="w-full h-screen md:overflow-y-auto snap-y snap-mandatory relative z-10"
