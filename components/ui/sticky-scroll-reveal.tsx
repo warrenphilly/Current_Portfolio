@@ -1,6 +1,6 @@
 "use client";
 import React, { useRef, useEffect } from "react";
-import { useMotionValueEvent, useScroll, useAnimate } from "framer-motion";
+import { useMotionValueEvent, useScroll,  } from "framer-motion";
 import { motion } from "framer-motion";
 
 export const StickyScroll = ({
@@ -15,10 +15,10 @@ export const StickyScroll = ({
   contentClassName?: string;
 }) => {
   const [activeCard, setActiveCard] = React.useState(0);
-  const ref = useRef<HTMLDivElement>(null);
-  const [scope] = useAnimate();
+  const containerRef = useRef<HTMLDivElement>(null);
+  // const [scope] = useAnimate();
   const { scrollYProgress } = useScroll({
-    container: ref,
+    container: containerRef,
     offset: ["start start", "end start"],
   });
   const cardLength = content.length;
@@ -45,11 +45,10 @@ export const StickyScroll = ({
   ];
 
   const handleCardClick = (index: number) => {
-    if (ref.current) {
-      const containerHeight =
-        ref.current.scrollHeight - ref.current.clientHeight;
+    if (containerRef.current) {
+      const containerHeight = containerRef.current.scrollHeight - containerRef.current.clientHeight;
       const scrollPosition = (index / (cardLength - 1)) * containerHeight;
-      ref.current.scrollTo({
+      containerRef.current.scrollTo({
         top: scrollPosition,
         behavior: "smooth",
       });
@@ -65,7 +64,7 @@ export const StickyScroll = ({
       handleCardClick(newIndex);
     };
 
-    const container = ref.current;
+    const container = containerRef.current;
     if (container) {
       container.addEventListener('wheel', handleWheel, { passive: false });
     }
@@ -75,6 +74,7 @@ export const StickyScroll = ({
         container.removeEventListener('wheel', handleWheel);
       }
     };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [activeCard, cardLength]);
 
   return (
@@ -82,75 +82,58 @@ export const StickyScroll = ({
       animate={{
         backgroundColor: backgroundColors[activeCard % backgroundColors.length],
       }}
-      className="h-[50rem] w-full overflow-y-auto flex justify-center relative space-x-10 rounded-md md:p-10"
-      ref={ref}
+      className="w-full h-screen overflow-hidden"
     >
       <div
-        className="div relative flex items-start px-4 w-full h-full"
-        ref={scope}
+        ref={containerRef}
+        className="h-screen w-full overflow-y-auto snap-y snap-mandatory py-[500px]"
       >
-        <div className="w-full h-full snap-y flex flex-col gap-10">
-          {content.map((item, index) => (
-            <div
-              key={item.title + index}
-              className="w-full flex flex-col items-center justify-center py-5 snap-start "
-            >
-              <div className="flex flex-col lg:flex-row justify-center items-center w-full md:gap-10 ">
-                <div className="flex flex-col gap-2 lg:w-full ">
-                  <motion.h2
-                    initial={{
-                      opacity: 0,
-                    }}
-                    animate={{
-                      opacity: activeCard === index ? 1 : 0.3,
-                    }}
-                    className="text-2xl font-bold text-lightBlue-300 cursor-pointer "
-                    onClick={() => handleCardClick(index)}
-                  >
-                    {item.title}
-                  </motion.h2>
-                  <motion.p
-                    initial={{
-                      opacity: 0,
-                    }}
-                    animate={{
-                      opacity: activeCard === index ? 1 : 0.3,
-                    }}
-                    className="text-md md:text-xl text-slate-300 max-w-sm mt-10 mb-5 md:mb-none "
-                  >
-                    {item.description}
-                  </motion.p>
-                </div>
+        {content.map((item, index) => (
+          <div
+            key={item.title + index}
+            className="w-full  lg:h-[300px] snap-start snap-always flex items-start justify-center py-10 px-4"
+          >
+            <div className="max-w-5xl w-full flex flex-col lg:flex-row justify-center md:justify-between items-start gap-10">
+              <div className="flex flex-col gap-4 lg:w-1/2">
+                <motion.h2
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: activeCard === index ? 1 : 0.3 }}
+                  className="text-xl md:text-3xl font-bold text-lightBlue-300 cursor-pointer"
+                  onClick={() => handleCardClick(index)}
+                >
+                  {item.title}
+                </motion.h2>
+                <motion.p
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: activeCard === index ? 1 : 0.3 }}
+                  className="text-md md:text-xl text-slate-300"
+                >
+                  {item.description}
+                </motion.p>
+              </div>
 
-                <div className="flex flex-col justify-start flex-wrap h-full w-full md:w-[400px]  gap-3">
-                  <motion.h2
-                    initial={{
-                      opacity: 0,
-                    }}
-                    animate={{
-                      opacity: activeCard === index ? 1 : 0.3,
-                    }}
-                    className="text-xl md:text-2xl font-bold text-white"
-                  >
-                    My Tools
-                  </motion.h2>
-                  <div className="flex flex-row justify-start flex-wrap  md:h-fit gap-3 ">
-                    {item.tools?.map((tool) => (
-                      <div
-                        className="bg-darkBlue-400 shadow-md text-white rounded-lg px-2 py-1 text-sm"
-                        key={tool}
-                      >
-                        {tool}
-                      </div>
-                    ))}
-                  </div>
+              <div className="lg:w-1/4">
+                <motion.h3
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: activeCard === index ? 1 : 0.3 }}
+                  className="text-lg md:text-2xl font-bold text-white mb-4"
+                >
+                  My Tools
+                </motion.h3>
+                <div className="flex flex-wrap gap-3">
+                  {item.tools?.map((tool) => (
+                    <div
+                      key={tool}
+                      className="bg-darkBlue-400 shadow-md text-white rounded-lg px-3 py-1 text-sm"
+                    >
+                      {tool}
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
-          ))}
-          {/* Extra padded div to prop up the final index */}
-          <div className="h-[600px]" />
-        </div>
+          </div>
+        ))}
       </div>
     </motion.div>
   );

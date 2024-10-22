@@ -99,7 +99,7 @@ const Hero = () => {
               </div>
 
                   <p
-              className={`text-sm block lg:hidden  mt-6 md:text-lg text-lightBlue-900 max-w-md mx-auto md:mx-0 transform transition-all duration-500 delay-200 ${
+              className={`text-sm block lg:hidden  mt-6 md:text-lg text-white max-w-md mx-auto md:mx-0 transform transition-all duration-500 delay-200 ${
                 mounted
                   ? "translate-y-0 opacity-100"
                   : "translate-y-4 opacity-0"

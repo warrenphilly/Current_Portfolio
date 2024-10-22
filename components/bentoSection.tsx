@@ -16,8 +16,8 @@ import Footer from "./Footer";
 
 export function BentoSection() {
   return (
-    <div id="bento-section" className="w-full md:h-full flex flex-col justify-center  items-center">
-      <div className="w-full md:h-full  max-w-lg md:max-w-7xl pb-4 md:pb-0">
+    <div id="bento-section" className="w-full md:h-full flex flex-col justify-center lg:justify-between  items-center">
+      <div className="w-full   max-w-lg md:max-w-7xl pb-4 md:pb-0 ">
         <BentoGrid className="mx-auto gap-4 sm:gap-2  ">
           {items.map((item, i) => (
             <BentoGridItem
@@ -129,7 +129,7 @@ const SkeletonThree = () => {
         repeat: Infinity,
         repeatType: "reverse",
       }}
-      className="flex bg-white/80  backdrop-blur-lg rounded-lg flex-1 w-full min-h-[12rem]  dark:bg-dot-white/[0.2]  bg-dot-black/[0.2] flex-col space-y-2"
+      className="flex  bg-red-500 backdrop-blur-lg rounded-lg flex-1 w-full min-h-[12rem]  dark:bg-dot-white/[0.2]  bg-dot-black/[0.2] flex-col space-y-2 mt25"
       style={{
         background:
           "linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab)",
@@ -325,7 +325,7 @@ const items = [
       </span>
     ),
     header: <SkeletonThree />,
-    className: "md:col-span-1 h-[400px]",
+    className: "md:col-span-1 lg:h-[410px]",
     icon: <IconSignature className="h-4 w-4 text-neutral-500" />,
   },
 ];

@@ -55,12 +55,12 @@ export const CardStack = ({
   };
 
   return (
-    <div className="relative h-[900px] md:h-full w-full mb-10 ">
+    <div className="relative h-[900px] md:h-full w-full mb-10 flex lg:justify-center lg:items-center ">
       {cards.map((card, index) => {
         return (
           <motion.div
             key={card.id}
-            className="absolute  dark:bg-black bg-[#0e1720] border border-neutral-700  mb-10 w-full md:h-full h-fit max-h-[820px] md:max-h-[800px] rounded-3xl shadow-xl flex flex-col p-8"
+            className="absolute  dark:bg-black bg-[#0e1720] border border-neutral-700 mb-10 w-full md:h-full h-fit max-h-[820px] md:max-h-[800px] rounded-3xl shadow-xl flex flex-col p-8 lg:max-w-[1100px]"
             style={{
               transformOrigin: "top center",
             }}
@@ -128,14 +128,14 @@ export const CardStack = ({
       })}
 
       <button
-        className="absolute top-1/2 left-0 hidden md:block transform -translate-y-1/2 -translate-x-full bg-[#42464a  p-2 rounded-full shadow-md"
+        className="absolute top-[40%] left-0 hidden md:block transform -translate-y-1/2 -translate-x-full bg-[#42464a]  p-2 rounded-full shadow-md "
         onClick={handlePrev}
         aria-label="Previous project"
       >
         <ChevronLeftIcon className="h-6 w-6 text-white" />
       </button>
       <button
-        className="absolute top-1/2 right-0  hidden md:block transform -translate-y-1/2 translate-x-full bg-[#42464a p-2 rounded-full shadow-md"
+        className="absolute top-[40%] right-0  hidden md:block transform -translate-y-1/2 translate-x-full bg-[#42464a] p-2 rounded-full shadow-md"
         onClick={handleNext}
         aria-label="Next project"
       >
