@@ -95,7 +95,7 @@ const Hero = () => {
                   onClick={handleOpenResume}
                   className="bg-lightBlue-300 w-full sm:w-[200px] text-white px-6 py-3 rounded-2xl cursor-pointer shadow-lg font-semibold hover:bg-darkBlue-400 transition-colors duration-300 text-center"
                 >
-                  Open Resume
+                  View Resume
                 </button>
                 <button
                   className="w-full sm:w-[200px] text-white px-6 py-3 bg-lightBlue-700 rounded-2xl cursor-pointer shadow-lg font-semibold hover:bg-darkBlue-400 hover:text-white transition-colors duration-300"

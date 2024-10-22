@@ -49,16 +49,18 @@ export default function Header() {
               onClick={handleOpenResume}
               className="text-[#1B3F59] hidden md:block  px-3 py-2 bg-lightBlue-200 rounded-lg text-sm font-semibold "
             >
-              Download Resume
+              View Resume
             </button>
           </motion.div>
         </nav>
-        <motion.a
-              href="#projects"
-              className="text-[#1B3F59]  block md:hidden px-3 py-2 bg-blue-300 rounded-2xl text-sm font-medium"
+     
+          <button   onClick={handleOpenResume} 
+              className="text-[#1B3F59]  block md:hidden px-3 py-2 bg-lightBlue-200 rounded-lg  text-sm font-semibold"
             >
-              Download Resume
-            </motion.a>
+            View Resume
+            </button>
+         
+         
       
         
         
