@@ -4,7 +4,7 @@ import { useRef } from "react";
 import Hero from "@/components/Hero";
 import { BentoSection } from "@/components/bentoSection";
 import DynamicBackground from "@/components/DynamicBackground";
-import Header from "@/components/Header";
+
 
 import Lightning from "@/components/Lightning";
 
