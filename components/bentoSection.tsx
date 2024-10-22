@@ -17,7 +17,7 @@ import Footer from "./Footer";
 export function BentoSection() {
   return (
     <div id="bento-section" className="w-full md:h-full flex flex-col justify-center lg:justify-between  items-center">
-      <div className="w-full   max-w-lg md:max-w-7xl pb-4 md:pb-0 ">
+      <div className="w-full px-5 md:px-0  max-w-lg md:max-w-7xl pb-4 md:pb-0 ">
         <BentoGrid className="mx-auto gap-4 sm:gap-2  ">
           {items.map((item, i) => (
             <BentoGridItem

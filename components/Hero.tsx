@@ -1,5 +1,5 @@
 "use client";
-
+import Header from "./Header";
 import { useState, useEffect } from "react";
 import Image from "next/image";
 
@@ -23,6 +23,7 @@ const Hero = () => {
 
   return (
     <div className=" mt-16 lg:mt-0 overflow-hidden flex items-center justify-center min-h-screen ">
+       <Header />
       <div className="container mx-auto px-4 py-8 md:py-0 z-10">
         <div className="flex flex-col md:flex-row items-center justify-center h-full w-full">
           {/* Text content */}

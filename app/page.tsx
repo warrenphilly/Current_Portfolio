@@ -19,11 +19,11 @@ export default function Home() {
         className="w-full h-screen md:overflow-y-auto snap-y snap-mandatory relative z-10"
       >
         <section className="w-full h-screen snap-start snap-always">
-          <Header />
+         
           <Hero />
         </section>
 
-        <section className="w-full h-screen snap-start snap-always md:flex items-center justify-center md:pt-24">
+        <section className="w-full h-screen snap-start snap-always md:flex items-center justify-center  md:pt-24">
           <BentoSection />
         
         </section>
