@@ -4,7 +4,7 @@ import { CardStack } from "@/components/ui/card-stack";
 
 export function Projects() {
   return (
-    <div className="h-full flex flex-col items-center justify-center w-full ">
+    <div className=" md:h-screen flex flex-col items-center justify-center w-full    ">
       <CardStack items={PROJECTS} />
     </div>
   );

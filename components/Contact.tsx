@@ -56,7 +56,7 @@ export default function Contact() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.2, duration: 0.5 }}
-          className="text-LightBlue-300 text-center mb-8 text-lg bg-[#234D73] rounded-xl shadow-xl p-4 "
+          className="text-LightBlue-300 text-center mb-8 text-md md:text-lg bg-[#234D73] rounded-xl shadow-xl p-4 "
         >
           Warning: Contacting me may result in sudden outbursts of code, 
           unexpected dad jokes, and an irresistible urge to redesign your 
@@ -118,7 +118,7 @@ export default function Contact() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className={`w-full py-3 px-4 flex items-center justify-center rounded-lg text-white font-medium ${
-              isSubmitting ? 'bg-blue-700' : 'bg-blue-600 hover:bg-blue-500'
+              isSubmitting ? 'bg-[#394d5e] focus:border  rounded-lg focus:outline-none focus:border-blue-500 transition-all duration-300 resize-none"' : 'bg-blue-600 hover:bg-blue-500'
             } focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-all duration-300`}
           >
             {isSubmitting ? (

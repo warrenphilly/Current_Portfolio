@@ -82,7 +82,7 @@ export const StickyScroll = ({
       animate={{
         backgroundColor: backgroundColors[activeCard % backgroundColors.length],
       }}
-      className="h-[50rem] overflow-y-auto flex justify-center relative space-x-10 rounded-md p-10"
+      className="h-[50rem] w-full overflow-y-auto flex justify-center relative space-x-10 rounded-md md:p-10"
       ref={ref}
     >
       <div
@@ -95,7 +95,7 @@ export const StickyScroll = ({
               key={item.title + index}
               className="w-full flex flex-col items-center justify-center py-5 snap-start "
             >
-              <div className="flex flex-col lg:flex-row justify-center items-center w-full gap-10  ">
+              <div className="flex flex-col lg:flex-row justify-center items-center w-full md:gap-10 ">
                 <div className="flex flex-col gap-2 lg:w-full ">
                   <motion.h2
                     initial={{
@@ -104,7 +104,7 @@ export const StickyScroll = ({
                     animate={{
                       opacity: activeCard === index ? 1 : 0.3,
                     }}
-                    className="text-2xl font-bold text-slate-100 cursor-pointer"
+                    className="text-2xl font-bold text-lightBlue-300 cursor-pointer "
                     onClick={() => handleCardClick(index)}
                   >
                     {item.title}
@@ -116,13 +116,13 @@ export const StickyScroll = ({
                     animate={{
                       opacity: activeCard === index ? 1 : 0.3,
                     }}
-                    className="text-kg text-slate-300 max-w-sm mt-10 "
+                    className="text-md md:text-xl text-slate-300 max-w-sm mt-10 mb-5 md:mb-none "
                   >
                     {item.description}
                   </motion.p>
                 </div>
 
-                <div className="flex flex-col justify-start flex-wrap h-full w-[400px]  gap-3">
+                <div className="flex flex-col justify-start flex-wrap h-full w-full md:w-[400px]  gap-3">
                   <motion.h2
                     initial={{
                       opacity: 0,
@@ -130,7 +130,7 @@ export const StickyScroll = ({
                     animate={{
                       opacity: activeCard === index ? 1 : 0.3,
                     }}
-                    className="text-2xl font-bold text-slate-100"
+                    className="text-xl md:text-2xl font-bold text-white"
                   >
                     My Tools
                   </motion.h2>

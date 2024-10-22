@@ -80,7 +80,7 @@ export const BentoGridItem = ({
       <ModalProvider>
         <div
           className={cn(
-            "hover:shadow-xl rounded-xl shadow-input dark:shadow-none bg-[#8ad0ff]/10 backdrop-blur-2xl   w-full h-full flex flex-col",
+            "hover:shadow-xl rounded-xl shadow-input dark:shadow-none bg-[#232a2f]/60 backdrop-blur-2xl   w-full h-full flex flex-col",
             className
           )}
         >
@@ -104,7 +104,7 @@ export const BentoGridItem = ({
                     <div className="font-sans font-bold text-lightBlue-300 dark:text-neutral-200 mb-1 sm:mb-2 text-lg sm:text-xl">
                       {title}
                     </div>
-                    <div className="font-sans font-normal text-lightBlue-600 text-xs sm:text-sm dark:text-neutral-300">
+                    <div className="font-sans font-normal text-white text-xs sm:text-sm dark:text-neutral-300">
                       {description}
                     </div>
                   </div>
