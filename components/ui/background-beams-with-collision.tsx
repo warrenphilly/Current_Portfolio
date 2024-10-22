@@ -13,15 +13,78 @@ export const BackgroundBeamsWithCollision = ({
   const containerRef = useRef<HTMLDivElement>(null);
   const parentRef = useRef<HTMLDivElement>(null);
 
-  const generateRandomBeam = () => ({
-    initialX: Math.random() * 2500, // Spread across 2500px width
-    duration: Math.random() * 1.5 + 0.5/100, // Duration between 0.5 and 2 seconds
-    repeatDelay: Math.random() * 1/100, // Random delay between 0 and 1 second
-    delay: Math.random() * 2/100, // Initial delay between 0 and 2 seconds
-    className: `h-${Math.floor(Math.random() * 20) + 4}`, // Random height between h-4 and h-24
-  });
+  const getRandomDuration = () => Math.random() * 1.0 + 0.5;
 
-  const beams = Array.from({ length: 20 }, generateRandomBeam);
+  const beams = [
+    {
+      initialX: 10,
+      translateX: 10,
+      duration: getRandomDuration(),
+      repeatDelay: 3,
+      delay: 0.1,
+      className: "h-6 md:hidden block",
+    },
+    {
+      initialX: 600,
+      translateX: 600,
+      duration: getRandomDuration(),
+      repeatDelay: 3,
+      delay: 0.1,
+      className: "h-20",
+    },
+    {
+      initialX: 200,
+      translateX: 200,
+      duration: getRandomDuration(),
+      repeatDelay: 7,
+      className: "h-6 md:hidden block",
+    },
+    {
+      initialX: 800,
+      translateX: 800,
+      duration: getRandomDuration(),
+      repeatDelay: 0.1,
+      className: "h-12",
+    },
+    {
+      initialX: 1200,
+      translateX: 1200,
+      duration: getRandomDuration(),
+      repeatDelay: 4,
+      delay: 0.1,
+      className: "h-6",
+    },
+    {
+      initialX: 100,
+      translateX: 100,
+      duration: getRandomDuration(),
+      repeatDelay: 4,
+      delay: 0.1,
+      className: "h-6 md:hidden block",
+    },
+    {
+      initialX: 1600,
+      translateX: 1600,
+      duration: getRandomDuration(),
+      repeatDelay: 3,
+      delay: 0.1,
+    },
+    {
+      initialX: 300,
+      translateX: 300,
+      duration: getRandomDuration(),
+      repeatDelay: 4,
+      delay: 0.1,
+      className: "h-6 md:hidden block",
+    },
+    {
+      initialX: 2000,
+      translateX: 2000,
+      duration: getRandomDuration(),
+      repeatDelay: 0.1,
+      className: "h-20",
+    },
+  ];
 
   return (
     <div
@@ -31,9 +94,9 @@ export const BackgroundBeamsWithCollision = ({
         className
       )}
     >
-      {beams.map((beam, index) => (
+      {beams.map((beam) => (
         <CollisionMechanism
-          key={`beam-${index}`}
+          key={beam.initialX + "beam-idx"}
           beamOptions={beam}
           containerRef={containerRef}
           parentRef={parentRef}
@@ -43,7 +106,8 @@ export const BackgroundBeamsWithCollision = ({
       {children}
       <div
         ref={containerRef}
-        className="absolute top-[80%] bg-transparent w-screen inset-x-0 pointer-events-none"
+        className="absolute bottom-0 z-75   bg-gradient-to-b from-[#0C7DB3] to-lightBlue-500 bg-lightBlue-500 w-full inset-x-0 pointer-events-none h-1/3"
+     
       ></div>
     </div>
   );
@@ -56,13 +120,17 @@ const CollisionMechanism = React.forwardRef<
     parentRef: React.RefObject<HTMLDivElement>;
     beamOptions?: {
       initialX?: number;
+      translateX?: number;
+      initialY?: number;
+      translateY?: number;
+      rotate?: number;
       className?: string;
       duration?: number;
       delay?: number;
       repeatDelay?: number;
     };
   }
->(({ parentRef, containerRef, beamOptions = {} }) => {
+>(({ parentRef, containerRef, beamOptions = {} }, ) => {
   const beamRef = useRef<HTMLDivElement>(null);
   const [collision, setCollision] = useState<{
     detected: boolean;
@@ -106,7 +174,7 @@ const CollisionMechanism = React.forwardRef<
     const animationInterval = setInterval(checkCollision, 50);
 
     return () => clearInterval(animationInterval);
-  }, [cycleCollisionDetected, containerRef, parentRef]);
+  }, [cycleCollisionDetected, containerRef]);
 
   useEffect(() => {
     if (collision.detected && collision.coordinates) {
@@ -123,19 +191,20 @@ const CollisionMechanism = React.forwardRef<
 
   return (
     <>
-      
       <motion.div
         key={beamKey}
         ref={beamRef}
         animate="animate"
         initial={{
-          translateY: "-200px",
+          translateY: beamOptions.initialY || "-200px",
           translateX: beamOptions.initialX || "0px",
+          rotate: beamOptions.rotate || 0,
         }}
         variants={{
           animate: {
-            translateY: "1800px",
-            translateX: beamOptions.initialX || "0px",
+            translateY: beamOptions.translateY || "1800px",
+            translateX: beamOptions.translateX || "0px",
+            rotate: beamOptions.rotate || 0,
           },
         }}
         transition={{
@@ -147,7 +216,7 @@ const CollisionMechanism = React.forwardRef<
           repeatDelay: beamOptions.repeatDelay || 0,
         }}
         className={cn(
-          "absolute left-0 top-20 m-auto h-14 w-px rounded-full bg-gradient-to-t from-blue-600 via-blue-300 to-transparent",
+          "absolute left-0 top-0 m-auto h-14 w-px rounded-full bg-gradient-to-t from-darkBlue-500 via-lightBlue-200 to-transparent",
           beamOptions.className
         )}
       />
@@ -186,7 +255,7 @@ const Explosion = ({ ...props }: React.HTMLProps<HTMLDivElement>) => {
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         transition={{ duration: 1.5, ease: "easeOut" }}
-        className="absolute -inset-x-10 top-0 m-auto h-2 w-10 rounded-full bg-gradient-to-r from-transparent via-blue-200 to-transparent blur-sm"
+        className="absolute -inset-x-10 top-0 m-auto h-2 w-10 rounded-full bg-gradient-to-r from-transparent via-lightBlue-200 to-transparent blur-sm"
       ></motion.div>
       {spans.map((span) => (
         <motion.span
@@ -198,7 +267,7 @@ const Explosion = ({ ...props }: React.HTMLProps<HTMLDivElement>) => {
             opacity: 0,
           }}
           transition={{ duration: Math.random() * 1.5 + 0.5, ease: "easeOut" }}
-          className="absolute h-1 w-1 rounded-full bg-gradient-to-b from-blue-700 to-blue-200"
+          className="absolute h-1 w-1 rounded-full bg-gradient-to-b from-darkBlue-500 to-lightBlue-200"
         />
       ))}
     </div>

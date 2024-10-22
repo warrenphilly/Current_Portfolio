@@ -53,7 +53,7 @@ const Hero = () => {
             >
               I&apos;m a Software Engineer 
             </h3>
-            <div className="md:hidden w-56 h-56 mx-auto mr-24">
+            <div className="md:hidden  w-56 h-56 ">
               <Image
                 src="/assets/images/pureAvatar.png"
                 alt="Warren"

@@ -68,16 +68,16 @@ export const EnhancedTimeline: React.FC = () => {
     title: item.period,
     content: (
       <div>
-        <p className="text-lightBlue-300 text-xs md:text-4xl font-normal mb-4 ">
+        <p className="text-lightBlue-100 text-lg md:text-2xl font-semibold mb-4 ">
           {item.title} at {item.organization}      </p>
-        <div className='flex justify-start lg:items-center gap-2 w-fit bg-navy-900 px-5 rounded-full text-lightBlue-500 mb-5'>
-        {React.createElement(iconMap[item.type], { className: "text-blue-500 text-xl" })}
+        <div className='flex justify-start lg:items-center gap-2 w-fit bg-[#475056] p-2 px-4 rounded-full text-lightBlue-300 mb-5 P-2'>
+        {React.createElement(iconMap[item.type], { className: "text-lightBlue-300 text-xl" })}
         {item.type.charAt(0).toUpperCase() + item.type.slice(1)}
    
         </div>
-        <div className="mb-8">
+        <div className="mb-8 gap-2">
           {item.description.map((desc, index) => (
-            <div key={index} className="flex gap-2 items-center text-lightBlue-200 text-lg lg:text-xl">
+            <div key={index} className="flex gap-2 items-center text-lightBlue-200 text-md md:text-lg my-4  min-w-[220px]">
               <span className="text-lightBlue-500 mr-2">▹</span> {desc}
             </div>
           ))}
