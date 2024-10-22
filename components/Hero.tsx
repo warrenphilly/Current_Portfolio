@@ -6,6 +6,10 @@ import Image from "next/image";
 const Hero = () => {
   const [mounted, setMounted] = useState(false);
 
+  const handleOpenResume = () => {
+    window.open('/WarrenPhillips_swe_Resume.pdf', '_blank', 'noopener,noreferrer');
+  };
+
   useEffect(() => {
     setMounted(true);
   }, []);
@@ -86,8 +90,11 @@ const Hero = () => {
               }`}
             >
               <div className="flex flex-col sm:flex-row gap-4 items-center justify-center md:justify-start w-full lg:mt-5">
-                <button className="bg-lightBlue-300 w-full sm:w-[200px] text-white px-6 py-3 rounded-2xl cursor-pointer shadow-lg font-semibold hover:bg-darkBlue-400 transition-colors duration-300">
-                  Download Resume
+              <button
+                  onClick={handleOpenResume}
+                  className="bg-lightBlue-300 w-full sm:w-[200px] text-white px-6 py-3 rounded-2xl cursor-pointer shadow-lg font-semibold hover:bg-darkBlue-400 transition-colors duration-300 text-center"
+                >
+                  Open Resume
                 </button>
                 <button
                   className="w-full sm:w-[200px] text-white px-6 py-3 bg-lightBlue-700 rounded-2xl cursor-pointer shadow-lg font-semibold hover:bg-darkBlue-400 hover:text-white transition-colors duration-300"

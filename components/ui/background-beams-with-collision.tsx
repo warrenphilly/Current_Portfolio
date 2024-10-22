@@ -30,7 +30,7 @@ export const BackgroundBeamsWithCollision = ({
       duration: getRandomDuration(),
       repeatDelay: 3,
       delay: 0.1,
-      className: "h-20",
+      className: "h-20 hidden md:block",
     },
     {
       initialX: 200,
@@ -44,7 +44,7 @@ export const BackgroundBeamsWithCollision = ({
       translateX: 800,
       duration: getRandomDuration(),
       repeatDelay: 0.1,
-      className: "h-12",
+      className: "h-12 hidden md:block",
     },
     {
       initialX: 1200,
@@ -52,7 +52,7 @@ export const BackgroundBeamsWithCollision = ({
       duration: getRandomDuration(),
       repeatDelay: 4,
       delay: 0.1,
-      className: "h-6",
+      className: "h-6 hidden md:block",
     },
     {
       initialX: 100,
@@ -67,6 +67,7 @@ export const BackgroundBeamsWithCollision = ({
       translateX: 1600,
       duration: getRandomDuration(),
       repeatDelay: 3,
+      className: "h-6 hidden md:block",
       delay: 0.1,
     },
     {
@@ -82,7 +83,7 @@ export const BackgroundBeamsWithCollision = ({
       translateX: 2000,
       duration: getRandomDuration(),
       repeatDelay: 0.1,
-      className: "h-20",
+      className: "h-20 hidden md:block",
     },
   ];
 

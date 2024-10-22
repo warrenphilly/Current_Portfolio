@@ -173,7 +173,7 @@ const SkeletonFour = () => {
         className="h-full w-1/3 rounded-2xl bg-[#fafafa] shadow-lg p-2 dark:bg-black dark:border-white/[0.1] border border-neutral-200 hidden lg:flex flex-col items-center justify-center"
       >
         <Image
-          src="/assets/images/riftyProject.png"
+          src="/assets/images/RiftyProject.png"
           alt="avatar"
           height="100"
           width="100"
@@ -185,7 +185,7 @@ const SkeletonFour = () => {
 
       <motion.div className="h-full w-full lg:w-1/3 relative z-20 rounded-2xl bg-white p-4 dark:bg-black dark:border-white/[0.1] border border-neutral-200 flex flex-col items-center justify-center">
         <Image
-          src="/assets/images/riftyProject.png"
+          src="/assets/images/RiftyProject.png"
           alt="avatar"
           height="100"
           width="100"
@@ -199,7 +199,7 @@ const SkeletonFour = () => {
         className="h-full w-1/3  rounded-2xl bg-white p-4 dark:bg-black dark:border-white/[0.1] border border-neutral-200 hidden lg:flex flex-col items-center justify-center"
       >
         <Image
-          src="/assets/images/riftyProject.png"
+          src="/assets/images/RiftyProject.png"
           alt="avatar"
           height="100"
           width="100"

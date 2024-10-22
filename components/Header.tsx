@@ -3,6 +3,10 @@
 import Link from "next/link";
 
 import { motion } from "framer-motion";
+const handleOpenResume = () => {
+  window.open('/WarrenPhillips_swe_Resume.pdf', '_blank', 'noopener,noreferrer');
+};
+
 
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 
@@ -41,12 +45,12 @@ export default function Header() {
             >
               <FaLinkedin size={30} />
             </motion.a>
-            <motion.a
-              href="#projects"
-              className="text-[#1B3F59] hidden md:block  px-3 py-1 bg-lightBlue-200 rounded-lg text-sm font-semibold"
+            <button
+              onClick={handleOpenResume}
+              className="text-[#1B3F59] hidden md:block  px-3 py-2 bg-lightBlue-200 rounded-lg text-sm font-semibold "
             >
               Download Resume
-            </motion.a>
+            </button>
           </motion.div>
         </nav>
         <motion.a
