@@ -29,12 +29,13 @@ export default function About() {
       </div>
       
       <div className="bg-[#1B3F59]/70 rounded-lg p-6 mb-12 shadow-md">
-        <h2 className="text-xl md:text-3xl  mb-6 text-lightBlue-200 dark:text-lightBlue-400">Why I Code (Besides World Domination)</h2>
+        <h2 className="text-xl md:text-3xl  mb-6 text-lightBlue-200 dark:text-lightBlue-400">Why I Code (tl:dr - World Domination)</h2>
         <ul className="list-none space-y-4 mb-6 text-sm md:text-lg text-white dark:text-lightBlue-100">
           {[
-            "To see how far I can push the boundaries of sanity and syntax",
-            "Because debugging is cheaper than therapy",
-            "because its fun (duh)",
+            "Its quite literally a superpower, You are only limited by your imagination",
+            "To see how far I can push the boundaries of syntax , and my sanity  ",
+            "Because debugging is cheaper than therapy( Results may vary)",
+      
             "In hopes that one day, my code will become sentient and cook for me"
           ].map((item, index) => (
             <li key={index} className="flex items-center">

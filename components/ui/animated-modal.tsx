@@ -87,14 +87,14 @@ export const ModalBody = ({
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="fixed inset-0 z-50 flex items-center justify-center w-full h-full "
+          className="fixed inset-0   z-50 flex items-center justify-center w-full h-full "
         >
           <Overlay />
 
           <motion.div
             ref={modalRef}
             className={cn(
-              "relative z-50 w-full h-full  bg-white dark:bg-neutral-950 border border-transparent dark:border-neutral-800 md:rounded-2xl  ",
+              "relative  z-50 w-full h-full  bg-white dark:bg-neutral-950 border border-transparent dark:border-neutral-800 md:rounded-2xl  ",
               className
             )}
             initial={{ scale: 0.9, opacity: 0 }}
@@ -119,7 +119,7 @@ export const ModalContent = ({
   className?: string;
 }) => {
   return (
-    <div className={cn("flex flex-col flex-1  p-8 md:p-10", className)}>
+    <div className={cn("flex top-16 lg:top-0  relative flex-col flex-1  p-8 md:p-10", className)}>
       {children}
     </div>
   );
@@ -168,7 +168,7 @@ const CloseIcon = () => {
   return (
     <button
       onClick={() => setOpen(false)}
-      className="absolute top-4 right-4 z-50 p-2 bg-white dark:bg-neutral-800 rounded-full"
+      className="absolute top-16 lg:top-4 right-4 z-50 p-2 bg-white dark:bg-neutral-800 rounded-full"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"

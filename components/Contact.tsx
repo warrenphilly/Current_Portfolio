@@ -1,47 +1,53 @@
 "use client";
 
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { FiSend, FiUser, FiMail, FiMessageSquare } from 'react-icons/fi';
-import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import axios from "axios";
+import { motion } from "framer-motion";
+import React, { useState } from "react";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+import {
+  FiCheck,
+  FiMail,
+  FiMessageSquare,
+  FiSend,
+  FiUser,
+} from "react-icons/fi";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
+    name: "",
+    email: "",
+    message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [submitStatus, setSubmitStatus] = useState<
+    "idle" | "success" | "error"
+  >("idle");
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     try {
-      await new Promise(resolve => setTimeout(resolve, 2000));
-      
-      const formattedMessage = `
-        Name: ${formData.name}
-        Email: ${formData.email}
-        Message: ${formData.message}
-      `;
-      
-      console.log("Formatted message:", formattedMessage);
-      
-      setSubmitStatus('success');
+      const response = await axios.post("/api/send-email", formData);
+
+      if (response.status === 200) {
+        setSubmitStatus("success");
+      } else {
+        throw new Error("Failed to send email");
+      }
     } catch (error) {
-      console.log(error);
-      setSubmitStatus('error');
+      console.error("Error sending email:", error);
+      setSubmitStatus("error");
     } finally {
       setIsSubmitting(false);
     }
   };
-
   return (
     <div className=" flex items-start justify-center  text-blue-100 p-4">
       <motion.div
@@ -50,17 +56,16 @@ export default function Contact() {
         transition={{ duration: 0.5 }}
         className="w-full max-w-md"
       >
-     
-        
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.2, duration: 0.5 }}
           className="text-LightBlue-300 text-center mb-8 text-md md:text-lg bg-[#234D73] rounded-xl shadow-xl p-4 "
         >
-          Warning: Contacting me may result in sudden outbursts of code, 
-          unexpected dad jokes, and an irresistible urge to redesign your 
-          entire digital life. Proceed with caution (and a sense of humor)!
+          <span className="font-bold mr-2"> Warning: </span> Contacting me may
+          result in sudden outbursts of code, random unsolicited movie trivia,
+          and an irresistible urge to redesign your entire digital life. Proceed
+          with caution and gusto (and a sense of humor)!
         </motion.p>
 
         <form onSubmit={handleSubmit} className="space-y-6">
@@ -114,24 +119,35 @@ export default function Contact() {
           </motion.div>
           <motion.button
             type="submit"
-            disabled={isSubmitting}
+            disabled={isSubmitting || submitStatus === "success"}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className={`w-full py-3 px-4 flex items-center justify-center rounded-lg text-white font-medium ${
-              isSubmitting ? 'bg-[#394d5e] focus:border  rounded-lg focus:outline-none focus:border-blue-500 transition-all duration-300 resize-none"' : 'bg-blue-600 hover:bg-blue-500'
+              isSubmitting || submitStatus === "success"
+                ? 'bg-[#394d5e] focus:border  rounded-lg focus:outline-none focus:border-blue-500 transition-all duration-300 resize-none"'
+                : "bg-[#3d6384] hover:bg-blue-500"
             } focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-all duration-300`}
           >
-            {isSubmitting ? (
-              'Sending...'
+            {submitStatus === "success" ? (
+              <>
+                <FiCheck className="mr-2" />
+                Message Received...You`&apos;`ll be hearing from me
+              </>
             ) : (
               <>
-                <FiSend className="mr-2" />
-                Send Message
+                {isSubmitting ? (
+                  "Sending..."
+                ) : (
+                  <>
+                    <FiSend className="mr-2" />
+                    Send Message
+                  </>
+                )}
               </>
             )}
           </motion.button>
         </form>
-        {submitStatus === 'success' && (
+        {/* {submitStatus === 'success' && (
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -139,8 +155,8 @@ export default function Contact() {
           >
             Message sent successfully!
           </motion.p>
-        )}
-        {submitStatus === 'error' && (
+        )} */}
+        {submitStatus === "error" && (
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
