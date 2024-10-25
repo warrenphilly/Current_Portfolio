@@ -65,7 +65,7 @@ export default function Contact() {
           <span className="font-bold mr-2"> Warning: </span> Contacting me may
           result in sudden outbursts of code, random unsolicited movie trivia,
           and an irresistible urge to redesign your entire digital life. Proceed
-          with caution and gusto (and a sense of humor)!
+          with caution and gusto!
         </motion.p>
 
         <form onSubmit={handleSubmit} className="space-y-6">

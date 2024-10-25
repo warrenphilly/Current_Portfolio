@@ -25,7 +25,7 @@ const content = [
       "Prisma",
     ],
     description:
-      "I thrive on building end-to-end solutions. Whether it's crafting responsive UIs with React, designing RESTful APIs with Node.js, or optimizing database queries, I enjoy the challenge of creating seamless user experiences. I've developed and deployed full-stack applications that handle thousands of daily users.",
+      "I thrive on building end-to-end solutions. Whether it's crafting responsive UIs with React, designing RESTful APIs with Node.js, or optimizing database queries, I enjoy the challenge of creating seamless user experiences. I've developed and deployed full-stack applications that look great on any device.",
     content: (
       <div>
         <h2 className="text-xl font-bold my-4">My Main Stack:</h2>

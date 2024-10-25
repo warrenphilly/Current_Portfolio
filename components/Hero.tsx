@@ -27,8 +27,17 @@ const Hero = () => {
       <div className="container mx-auto px-4 py-8 md:py-0 z-10">
         <div className="flex flex-col md:flex-row items-center justify-center h-full w-full">
           {/* Text content */}
-          <div className="w-full space-y-4 md:space-y-6 mb-8 md:mb-0 text-center md:text-left flex flex-col items-center md:items-start justify-center">
+          <div className="w-full space-y-2 md:space-y-6 mb-8 md:mb-0 text-center md:text-left flex flex-col items-center md:items-start justify-center">
             <div className="flex flex-col items-center md:items-start">
+            <div className="md:hidden  w-64 h-64 mr-16">
+              <Image
+                src="/assets/images/pureAvatar.png"
+                alt="Warren"
+                width={200}
+                height={200}
+                className="transition-all duration-300 w-full h-full "
+              />
+            </div>
               <h2
                 className={`text-2xl md:text-4xl font-semibold text-lightBlue-200 transform transition-all duration-500 ${
                   mounted
@@ -50,7 +59,7 @@ const Hero = () => {
             </div>
 
             <h3
-              className={`text-xl md:text-4xl text-lightBlue-200  font-semibold transform transition-all duration-500 delay-100 ${
+              className={`text-xl md:text-4xl text-lightBlue-200  font-semibold transform transition-all duration-500 delay-100 pb-5 ${
                 mounted
                   ? "translate-y-0 opacity-100"
                   : "translate-y-4 opacity-0"
@@ -58,15 +67,7 @@ const Hero = () => {
             >
               I&apos;m a Software Engineer 
             </h3>
-            <div className="md:hidden  w-56 h-56 ">
-              <Image
-                src="/assets/images/pureAvatar.png"
-                alt="Warren"
-                width={200}
-                height={200}
-                className="transition-all duration-300 w-full h-full"
-              />
-            </div>
+            
 
             <p
               className={`hidden md:block text-sm md:text-lg text-white max-w-md mx-auto md:mx-0 transform transition-all duration-500 delay-200 ${
@@ -75,9 +76,8 @@ const Hero = () => {
                   : "translate-y-4 opacity-0"
               } shadow-glow-sm`}
             >
-               I&apos;m a mostly sane software engineer. My code is so clean, it squeaks. When I&apos;m not turning coffee
-              into code, I&apos;m dreaming up new ways to make computers do my
-              bidding. 
+               My code is so clean, it squeaks like new jordans. I&apos;m busy dreaming up new ways to make computers do my
+              bidding. Lets get building!
             </p>
 
             {/* Avatar for mobile */}
@@ -90,15 +90,15 @@ const Hero = () => {
                   : "translate-y-4 opacity-0"
               }`}
             >
-              <div className="flex flex-col sm:flex-row gap-4 items-center justify-center md:justify-start w-full lg:mt-5">
+              <div className="flex flex-row gap-4 items-center justify-center md:justify-start w-full lg:mt-5">
               <button
                   onClick={handleOpenResume}
-                  className="bg-lightBlue-300 w-full sm:w-[200px] text-white px-6 py-3 rounded-2xl cursor-pointer shadow-lg font-semibold hover:bg-darkBlue-400 transition-colors duration-300 text-center"
+                  className="bg-lightBlue-300 text-sm md:text-md  w-[150px]  h-[60px] sm:w-[200px] text-white px-6 py-3 rounded-2xl cursor-pointer shadow-lg font-semibold hover:bg-darkBlue-400 transition-colors duration-300 text-center"
                 >
                   View Resume
                 </button>
                 <button
-                  className="w-full sm:w-[200px] text-white px-6 py-3 bg-lightBlue-700 rounded-2xl cursor-pointer shadow-lg font-semibold hover:bg-darkBlue-400 hover:text-white transition-colors duration-300"
+                  className=" w-[150px] h-[60px] sm:w-[200px] text-sm sm:text-md text-white px-6 py-3 bg-lightBlue-700 rounded-2xl cursor-pointer shadow-lg font-semibold hover:bg-darkBlue-400 hover:text-white transition-colors duration-300"
                   onClick={handleScrollToBento}
                   aria-label="Scroll to Bento section"
                 >
@@ -113,9 +113,8 @@ const Hero = () => {
                   : "translate-y-4 opacity-0"
               } shadow-glow-sm`}
             >
-               I&apos;m a mostly sane software engineer. My code is so clean, it squeaks. When I&apos;m not turning coffee
-              into code, I&apos;m dreaming up new ways to make computers do my
-              bidding. 
+              My code is so clean, it squeaks. I&apos;m busy dreaming up new ways to make computers do my
+              bidding. Lets get building!
             </p>
 
             </div>
