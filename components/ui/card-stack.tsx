@@ -55,12 +55,12 @@ export const CardStack = ({
   };
 
   return (
-    <div className="relative h-[900px] md:h-full w-full mb-10 flex lg:justify-center lg:items-center ">
+    <div className="relative h-[1000px] mt-[370px] md:h-full md:mt-0 w-full mb-10 flex lg:justify-center lg:items-center ">
       {cards.map((card, index) => {
         return (
           <motion.div
             key={card.id}
-            className="absolute  dark:bg-black bg-[#0e1720] border border-neutral-700 mb-10 w-full md:h-full max-h-[820px] md:max-h-[800px] rounded-3xl shadow-xl flex flex-col p-8 lg:max-w-[1100px]"
+            className="absolute dark:bg-black bg-[#0e1720] border border-neutral-700 mb-10 w-full md:h-full max-h-full md:max-h-[800px] rounded-3xl shadow-xl flex flex-col p-4 md:p-8 lg:max-w-[1100px]"
             style={{
               transformOrigin: "top center",
             }}
@@ -70,7 +70,7 @@ export const CardStack = ({
               zIndex: cards.length - index,
             }}
           >
-            <div className="flex flex-row justify-between items-center gap-2  py-4 my-5">
+            <div className="flex flex-row justify-between items-center gap-2 py-2 md:py-4 my-2 md:my-5">
               <button
                 className="bg-[#42464a] w-10 h-10 md:hidden dark:bg-black rounded-full shadow-md flex items-center justify-center"
                 onClick={handlePrev}
@@ -92,8 +92,8 @@ export const CardStack = ({
               </button>
             </div>
 
-            <div className="flex md:flex-row flex-col h-full gap-4">
-              <div className="relative bg-white h-full min-h-[300px] flex-grow mb-4 rounded-xl overflow-hidden pt-[20px] w-full shadow-2xl ">
+            <div className="flex md:flex-row flex-col h-auto md:h-full gap-4">
+              <div className="relative bg-white h-[200px] md:h-full min-h-[200px] md:min-h-[300px] flex-grow mb-2 md:mb-4 rounded-xl overflow-hidden pt-[10px] md:pt-[20px] w-full shadow-2xl">
                 <div className=" flex items-center w-fit  justify-center pt-[20px] rounded-xl mt-[20px] h-full ">
                   <Image
                     src={card.image}
@@ -104,7 +104,7 @@ export const CardStack = ({
                   />
                 </div>
               </div>
-              <div className="w-full  rounded-lg l p-4 text-white  md:h-full  flex flex-col justify-start md:justify-between  gap-8 text-sm md:text-xl">
+              <div className="w-full rounded-lg p-2 md:p-4 text-white flex flex-col justify-start md:justify-between gap-4 md:gap-8 text-sm md:text-xl">
                 {card.description}
                 <div className="flex md:flex-row flex-col md:gap-2 gap-6 justify-between items-center md:items-end">
                  
