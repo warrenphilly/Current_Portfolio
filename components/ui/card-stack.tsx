@@ -1,8 +1,9 @@
 "use client";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
+import { ChevronLeftIcon, ChevronRightIcon, BuildingOfficeIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
+import { cn } from "@/lib/utils";
 
 type Card = {
   id: number;
@@ -57,6 +58,8 @@ export const CardStack = ({
   return (
     <div className="relative h-[1000px] md:h-full md:mt-0 w-full mb-10 flex lg:justify-center lg:items-center ">
       {cards.map((card, index) => {
+        const isComingSoon = card.link === "#" || card.github === "#";
+        
         return (
           <motion.div
             key={card.id}
@@ -94,32 +97,83 @@ export const CardStack = ({
 
             <div className="flex md:flex-row flex-col h-auto md:h-full gap-4">
               <div className="relative bg-white h-[200px] md:h-full min-h-[200px] md:min-h-[300px] flex-grow mb-2 md:mb-4 rounded-xl overflow-hidden pt-[10px] md:pt-[20px] w-full shadow-2xl">
-                <div className=" flex items-center w-fit  justify-center pt-[20px] rounded-xl mt-[20px] h-full ">
+                {isComingSoon && (
+                  <div className="absolute inset-0 z-10 flex flex-col items-center justify-center bg-black/50 backdrop-blur-sm">
+                    <div className="absolute -rotate-12 bg-yellow-400 text-black font-bold py-2 px-8 shadow-lg transform -translate-y-4 border-2 border-yellow-500">
+                      <div className="flex items-center gap-2">
+                        <BuildingOfficeIcon className="h-5 w-5" />
+                        <span>Under Construction</span>
+                      </div>
+                    </div>
+                    {/* <div className="w-16 h-16 animate-bounce mt-8">
+                      <svg 
+                        xmlns="http://www.w3.org/2000/svg" 
+                        fill="none" 
+                        viewBox="0 0 24 24" 
+                        stroke="currentColor" 
+                        className="text-yellow-400"
+                      >
+                        <path 
+                          strokeLinecap="round" 
+                          strokeLinejoin="round" 
+                          strokeWidth={2} 
+                          d="M19 14l-7 7m0 0l-7-7m7 7V3" 
+                        />
+                      </svg>
+                    </div> */}
+                  </div>
+                )}
+                <div className="flex items-center w-fit justify-center pt-[20px] rounded-xl mt-[20px] h-full">
                   <Image
                     src={card.image}
                     alt={card.title}
                     layout="fill"
                     objectFit="contain"
-                    className="rounded-xl shadow-2xl h-full"
+                    className={cn(
+                      "rounded-xl shadow-2xl h-full",
+                      isComingSoon && "opacity-50"
+                    )}
                   />
                 </div>
               </div>
               <div className="w-full rounded-lg p-2 md:p-4 text-white flex flex-col justify-start md:justify-between gap-4 md:gap-8 text-sm md:text-xl">
                 {card.description}
                 <div className="flex md:flex-row flex-col md:gap-2 gap-6 justify-between items-center md:items-end">
-                 
                   <div className="flex flex-col gap-2">
-                  <span className="text-white font-bold text-sm">Tools I used:</span> 
-                  <div className="  flex flex-wrap md:max-w-[300px] gap-2 ">
-                   
-                  {card.tools.map((tool, index) => (
-                    <span key={index} className="text-lightBlue-300 font-bold text-xs md:text-sm bg-[#202a33]  px-2 py-1 rounded-md shadow-md">
-                      {tool},
-                    </span>
-                  ))}
+                    <span className="text-white font-bold text-sm">Tools I used:</span> 
+                    <div className="flex flex-wrap md:max-w-[300px] gap-2">
+                      {card.tools.map((tool, index) => (
+                        <span 
+                          key={index} 
+                          className="text-lightBlue-300 font-bold text-xs md:text-sm bg-[#202a33] px-2 py-1 rounded-md shadow-md"
+                        >
+                          {tool}
+                        </span>
+                      ))}
                     </div>
                   </div>
-                  <a href={card.link} target="_blank" rel="noopener noreferrer" className="text-[#60a2e4]  py-2 font-bold text-md w-full md:w-auto bg-[#292d31] text-center  px-4 rounded-lg md:rounded-full " > View Demo</a>
+                  <div className="flex  flex-col gap-4 w-full lg:w-auto">
+                    {card.github !== "#" && (
+                      <a 
+                        href={card.github} 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        className="text-[#60a2e4] py-2 font-bold text-md w-full md:w-auto bg-[#292d31] text-center px-4 rounded-lg  hover:bg-[#343a3f] transition-colors"
+                      >
+                        GitHub
+                      </a>
+                    )}
+                    {card.link !== "#" && (
+                      <a 
+                        href={card.link} 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        className="text-[#ffffff] py-2 font-bold text-md w-full md:w-auto bg-[#254463] text-center px-4 rounded-lg  hover:bg-[#343a3f] transition-colors"
+                      >
+                        View Demo
+                      </a>
+                    )}
+                  </div>
                 </div>
               </div> 
             </div>
