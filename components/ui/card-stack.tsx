@@ -55,7 +55,7 @@ export const CardStack = ({
   };
 
   return (
-    <div className="relative h-[1000px] mt-[370px] md:h-full md:mt-0 w-full mb-10 flex lg:justify-center lg:items-center ">
+    <div className="relative h-[1000px] md:h-full md:mt-0 w-full mb-10 flex lg:justify-center lg:items-center ">
       {cards.map((card, index) => {
         return (
           <motion.div

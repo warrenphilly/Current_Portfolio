@@ -2,6 +2,8 @@
 import Header from "./Header";
 import { useState, useEffect } from "react";
 import Image from "next/image";
+// Add Framer Motion import
+import { motion } from "framer-motion";
 
 const Hero = () => {
   const [mounted, setMounted] = useState(false);
@@ -29,15 +31,20 @@ const Hero = () => {
           {/* Text content */}
           <div className="w-full space-y-2 md:space-y-6 mb-8 md:mb-0 text-center md:text-left flex flex-col items-center md:items-start justify-center">
             <div className="flex flex-col items-center md:items-start">
-            <div className="md:hidden  w-64 h-64 mr-16">
+            <motion.div 
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
+              className="md:hidden w-64 h-64 mr-16"
+            >
               <Image
                 src="/assets/images/pureAvatar.png"
                 alt="Warren"
                 width={200}
                 height={200}
-                className="transition-all duration-300 w-full h-full "
+                className="transition-all duration-300 w-full h-full"
               />
-            </div>
+            </motion.div>
               <h2
                 className={`text-2xl md:text-4xl font-semibold text-lightBlue-200 transform transition-all duration-500 ${
                   mounted
@@ -121,17 +128,21 @@ const Hero = () => {
           </div>
 
           {/* Avatar for larger screens */}
-          <div className="hidden md:flex md:w-full justify-center md:justify-end">
+          <motion.div 
+            className="hidden md:flex md:w-full justify-center md:justify-end"
+            initial={{ x: 100, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
+          >
             <div className="relative w-[300px] h-[300px] lg:w-[800px] lg:h-[800px]">
               <Image
                 src="/assets/images/pureAvatar.png"
                 alt="Warren"
                 layout="fill"
                 objectFit="contain"
-                className="transition-all duration-300"
               />
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </div>

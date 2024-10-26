@@ -63,7 +63,7 @@ export default function Contact() {
           className="text-LightBlue-300 text-center mb-8 text-md md:text-lg bg-[#234D73] rounded-xl shadow-xl p-4 "
         >
           <span className="font-bold mr-2"> Warning: </span> Contacting me may
-          result in sudden outbursts of code, random unsolicited movie trivia,
+          result in sudden outbursts random space facts and unsolicited movie trivia,
           and an irresistible urge to redesign your entire digital life. Proceed
           with caution and gusto!
         </motion.p>

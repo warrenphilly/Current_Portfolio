@@ -50,7 +50,7 @@ const Lightning = () => {
 
   useEffect(() => {
     const intervalId = setInterval(() => {
-      if (Math.random() < 0.3) {
+      if (Math.random() < 0.5) {
         triggerLightning();
       }
     }, 2000);
