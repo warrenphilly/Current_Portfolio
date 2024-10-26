@@ -22,7 +22,7 @@ export default function Home() {
           <Hero />
         </section>
 
-        <section className="w-full h-full lg:max-h-[95vh]   snap-start snap-always  overflow-y-scroll sm:overflow-y-hidden pt-24 ">
+        <section className="w-full h-full lg:max-h-[95vh]   snap-start snap-always  overflow-y-scroll  pt-24  ">
           <BentoSection />
          
         </section>

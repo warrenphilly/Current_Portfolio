@@ -153,7 +153,7 @@ export const CardStack = ({
                     </div>
                   </div>
                   <div className="flex  flex-col gap-4 w-full lg:w-auto">
-                    {card.github !== "#" && (
+                    {/* {card.github !== "#" && (
                       <a 
                         href={card.github} 
                         target="_blank" 
@@ -162,7 +162,7 @@ export const CardStack = ({
                       >
                         GitHub
                       </a>
-                    )}
+                    )} */}
                     {card.link !== "#" && (
                       <a 
                         href={card.link} 
