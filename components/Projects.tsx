@@ -26,5 +26,18 @@ const PROJECTS = [
     
    
   },
+  {
+    id: 1,
+    title: "Coming Soon...",
+    image: "/assets/images/RiftyProject.png",
+    link: "", 
+    tools: [""],
+    github: "",
+   
+    description:"Something crazy this way comes...",
+
+    
+   
+  },
  
 ];

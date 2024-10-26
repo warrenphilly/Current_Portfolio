@@ -196,7 +196,7 @@ const content = [
 
 export function Skills() {
   return (
-    <div className="p-4 lg:p-10 min-h-[1000px] overflow-hidden text-lightBlue-200 w-full ">
+    <div className="pb-4 px-4 lg:p-10 h-screen overflow-hidden text-lightBlue-200 w-full ">
       <StickyScroll content={content} />
     </div>
   );

@@ -4,7 +4,7 @@ export default function About() {
   return (
     <div className="container mx-auto px-4 py-12  rounded-xl ">
       <div className="flex flex-col md:flex-row items-center mb-12">
-        <div className="relative w-64 h-64 mb-8 md:mb-0 md:mr-12">
+        <div className="relative w-64 h-64 mb-8 md:mb-0 md:mr-12 ">
           <Image
             src="/assets/images/avatarPeaceful.png"
             alt="Warren Phillips in his natural habitat"
@@ -13,12 +13,20 @@ export default function About() {
             className="bg-lightBlue-900 rounded-2xl shadow-xl h-full w-full"
           />
         </div>
-        <div className="flex-1  bg-[#1B3F59]/40 rounded-2xl p-5 shadow-2xl">
+        <div className="flex-1  bg-[#1B3F59]/40 rounded-2xl p-5 shadow-2xl h-full">
           <p className="mb-4 text-lg md:text-2xl text-white p-5 ">
             Hey Y&apos;all! I&apos;m Warren, a software engineer 
             with a passion for inventing...and a slight obsession to become the closest thing to Tony Stark reality will allow.
           </p>
-          <p className="mb-4 text-lg md:text-2xl text-white p-5 ">When I&apos;m not busy trying to convince my computer that it&apos;s
+        
+        
+          <p className="mb-4 text-lg text-md font-regular text-white italic  px-5">
+          Image 1.1: Photograph of Warren Phillips in his natural habitat
+          </p>
+        </div>
+      </div>
+      <div>
+      <p className="mb-4 text-lg md:text-2xl text-white p-5 ">When I&apos;m not busy trying to convince my computer that it&apos;s
             not smarter than me , I&apos;m on a mission to build the
             coolest and most unnecessarily complex solutions to
             problems you didn&apos;t even know you had...and I build &apos;em pretty too
@@ -27,10 +35,6 @@ export default function About() {
             I genuinely love writing code. I&apos;ve always enjoyed building (legos are undefeated) but code feels limitless. You can literally build anything. You can turn from an idea living in your brain into a real solution the world has never seen but always needed, used by millions, all by yourself.
             </p><p className="mb-4 text-lg md:text-2xl text-white p-5 "> Programming a rare field, in which you are actually only limited by your imagination. It challenges the mind in ways that are rewarding while providing tangible results that are actual solutions to real world problems, and the best part is, you can do it all by yourself.
           </p>
-          <p className="mb-4 text-lg md:text-2xl text-white  px-5">
-            
-          </p>
-        </div>
       </div>
 
       <div className="bg-[#1B3F59]/70 rounded-lg p-6 mb-12 shadow-md">
