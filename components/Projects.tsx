@@ -35,6 +35,24 @@ const PROJECTS = [
   },
   {
     id: 1,
+    title: "Warren Real Estate - A Landing Page for a Real Estate Agency",
+    image: "/assets/images/WarrenRealEstate.png", // Add a placeholder image
+    link: "https://real-estate-app-one-nu.vercel.app",
+    github: "https://github.com/warrenphilly",
+    tools: ["NextJs", "TailwindCSS", "Typescript","Vercel"],
+    description: " This is a landing page for a real estate agency. It is built with Next.js and TailwindCSS. It is a simple and responsive landing page that showcases the agency's services and properties.",
+  },
+  {
+    id: 2,
+    title: "L.E.V.I | GPT powered Ai voice assistant with a charming british wit, ",
+    image: "/assets/images/Levi.png", // Add a placeholder image
+    link: "https://levi-live.vercel.app",
+    github: "https://github.com/warrenphilly/levi-live.git",
+    tools: ["NextJs", "TailwindCSS", "Typescript","Vercel","OpenAI","Speech-to-text API"],
+    description: "L.E.V.I is a GPT powered Ai voice assistant with a charming british wit. It is built with Next.js and TailwindCSS and run's openai's whisper model to convert text to speech and Speech-to-text API to convert speech to text. And GPT-4o to power the voice assistant.Warning-He's kind of a jerk. (Currently under maintenance)",
+  },
+  {
+    id: 3,
     title: "Coming Soon...",
     image: "/assets/images/coming-soon.png", // Add a placeholder image
     link: "#",

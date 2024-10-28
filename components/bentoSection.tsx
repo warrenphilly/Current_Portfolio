@@ -166,47 +166,60 @@ const SkeletonFour = () => {
       initial="initial"
       animate="animate"
       whileHover="hover"
-      className="flex flex-1  bg-[#1C2934] backdrop-blur-lg rounded-lg w-full h-[300px] lg:h-[340px]  dark:bg-dot-white/[0.2] bg-dot-black/[0.2] flex-row "
+      className="flex flex-1 bg-[#1C2934] backdrop-blur-lg rounded-lg w-full h-[300px] lg:h-[340px] dark:bg-dot-white/[0.2] bg-dot-black/[0.2] flex-row"
     >
+      {/* Left Project */}
       <motion.div
         variants={first}
-        className="h-full w-1/3 rounded-2xl bg-[#fafafa] shadow-lg p-2 dark:bg-black dark:border-white/[0.1] border border-neutral-200 hidden lg:flex flex-col items-center justify-center"
+        className="h-full w-1/3 rounded-2xl bg-[#fafafa] shadow-lg p-4 dark:bg-black dark:border-white/[0.1] border border-neutral-200 hidden lg:flex flex-col items-center justify-center"
       >
-        <Image
-          src="/assets/images/RiftyProject.png"
-          alt="avatar"
-          height="100"
-          width="100"
-          className="rounded-lg h-full w-full "
-        />
-
-      
+        <div className="relative w-full h-full">
+          <Image
+            src="/assets/images/RiftyProject.png"
+            alt="Rifty Project"
+            fill
+            quality={100}
+            priority
+            sizes="(max-width: 768px) 33vw"
+            className="rounded-lg object-cover"
+            unoptimized
+          />
+        </div>
       </motion.div>
 
+      {/* Center Project */}
       <motion.div className="h-full w-full lg:w-1/3 relative z-20 rounded-2xl bg-white p-4 dark:bg-black dark:border-white/[0.1] border border-neutral-200 flex flex-col items-center justify-center">
-        <Image
-          src="/assets/images/RiftyProject.png"
-          alt="avatar"
-          height="100"
-          width="100"
-          className="rounded-lg h-full w-full"
-        />
-
+        <div className="relative w-full h-full">
+          <Image
+            src="/assets/images/WarrenRealEstate.png"
+            alt="Warren Real Estate"
+            fill
+            quality={100}
+            priority
+            sizes="(max-width: 768px) 100vw, 33vw"
+            className="rounded-lg object-cover"
+            unoptimized
+          />
+        </div>
       </motion.div>
 
+      {/* Right Project */}
       <motion.div
         variants={second}
-        className="h-full w-1/3  rounded-2xl bg-white p-4 dark:bg-black dark:border-white/[0.1] border border-neutral-200 hidden lg:flex flex-col items-center justify-center"
+        className="h-full w-1/3 rounded-2xl bg-white p-4 dark:bg-black dark:border-white/[0.1] border border-neutral-200 hidden lg:flex flex-col items-center justify-center"
       >
-        <Image
-          src="/assets/images/RiftyProject.png"
-          alt="avatar"
-          height="100"
-          width="100"
-          className="rounded-lg h-full w-full"
-        />
-
-     
+        <div className="relative w-full h-full">
+          <Image
+            src="/assets/images/Levi.png"
+            alt="Levi Project"
+            fill
+            quality={100}
+            priority
+            sizes="(max-width: 768px) 33vw"
+            className="rounded-lg object-cover"
+            unoptimized
+          />
+        </div>
       </motion.div>
     </motion.div>
   );

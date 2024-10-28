@@ -41,7 +41,7 @@ export const CardStack = ({
     setIsAutoRotating(false);
     setCards((prevCards: Card[]) => {
       const newArray = [...prevCards];
-      newArray.push(newArray.shift()!);
+      newArray.unshift(newArray.pop()!);
       return newArray;
     });
   };
@@ -50,7 +50,7 @@ export const CardStack = ({
     setIsAutoRotating(false);
     setCards((prevCards: Card[]) => {
       const newArray = [...prevCards];
-      newArray.unshift(newArray.pop()!);
+      newArray.push(newArray.shift()!);
       return newArray;
     });
   };
@@ -63,7 +63,7 @@ export const CardStack = ({
         return (
           <motion.div
             key={card.id}
-            className="absolute dark:bg-black bg-[#0e1720] border border-neutral-700 mb-10 w-full md:h-full max-h-full md:max-h-[800px] rounded-3xl shadow-xl flex flex-col p-4 md:p-8 lg:max-w-[1100px]"
+            className="absolute dark:bg-black bg-[#0e1720] min-h-[600px] md:min-h-[800px] border border-neutral-700 mb-10 w-full md:h-full max-h-full md:max-h-[800px] rounded-3xl shadow-xl flex flex-col p-4 md:p-8 lg:max-w-[1100px]"
             style={{
               transformOrigin: "top center",
             }}
@@ -96,7 +96,7 @@ export const CardStack = ({
             </div>
 
             <div className="flex md:flex-row flex-col h-auto md:h-full gap-4">
-              <div className="relative bg-white h-[200px] md:h-full min-h-[200px] md:min-h-[300px] flex-grow mb-2 md:mb-4 rounded-xl overflow-hidden pt-[10px] md:pt-[20px] w-full shadow-2xl">
+              <div className="relative bg-white h-[300px] md:h-full min-h-[200px] md:min-h-[300px] flex-grow mb-2 md:mb-4 rounded-xl overflow-hidden w-full shadow-2xl">
                 {isComingSoon && (
                   <div className="absolute inset-0 z-10 flex flex-col items-center justify-center bg-black/50 backdrop-blur-sm">
                     <div className="absolute -rotate-12 bg-yellow-400 text-black font-bold py-2 px-8 shadow-lg transform -translate-y-4 border-2 border-yellow-500">
@@ -123,14 +123,16 @@ export const CardStack = ({
                     </div> */}
                   </div>
                 )}
-                <div className="flex items-center w-fit justify-center pt-[20px] rounded-xl mt-[20px] h-full">
+                <div className="relative w-full h-full flex items-center justify-center">
                   <Image
                     src={card.image}
                     alt={card.title}
-                    layout="fill"
-                    objectFit="contain"
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    quality={95}
+                    priority={index === 0}
                     className={cn(
-                      "rounded-xl shadow-2xl h-full",
+                      "object-contain md:object-fill w-full h-full",
                       isComingSoon && "opacity-50"
                     )}
                   />
