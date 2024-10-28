@@ -4,7 +4,7 @@ import Link from "next/link";
 
 import { motion } from "framer-motion";
 const handleOpenResume = () => {
-  window.open('/WarrenPhillips_swe_Resume.pdf', '_blank', 'noopener,noreferrer');
+  window.open('/WarrenPhillipsSoftwareEngCv.pdf', '_blank', 'noopener,noreferrer');
 };
 
 
