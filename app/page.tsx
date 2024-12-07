@@ -16,13 +16,13 @@ export default function Home() {
       <DynamicBackground />
       <div
         ref={containerRef}
-        className="w-full h-screen overflow-y-auto snap-y snap-mandatory relative z-10"
+        className="w-full h-screen overflow-y-auto md:snap-y snap-mandatory relative z-10"
       >
-        <section className="w-full h-screen snap-start snap-always ">
+        <section className="w-full h-screen md:snap-start md:snap-always ">
           <Hero />
         </section>
 
-        <section className="w-full h-full lg:max-h-[95vh]   snap-start snap-always  overflow-y-scroll  pt-24  ">
+        <section className="w-full h-full lg:max-h-[95vh]   md:snap-start md:snap-always  md:overflow-y-scroll  pt-24  ">
           <BentoSection />
          
         </section>
