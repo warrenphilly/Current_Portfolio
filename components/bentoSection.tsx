@@ -191,7 +191,7 @@ const SkeletonFour = () => {
       <motion.div className="h-full w-full lg:w-1/3 relative z-20 rounded-2xl bg-white p-4 dark:bg-black dark:border-white/[0.1] border border-neutral-200 flex flex-col items-center justify-center">
         <div className="relative w-full h-full">
           <Image
-            src="/assets/images/WarrenRealEstate.png"
+            src="/assets/images/study1.png"
             alt="Warren Real Estate"
             fill
             quality={100}
@@ -210,7 +210,7 @@ const SkeletonFour = () => {
       >
         <div className="relative w-full h-full">
           <Image
-            src="/assets/images/Levi.png"
+            src="/assets/images/warrenRealEstate.png"
             alt="Levi Project"
             fill
             quality={100}

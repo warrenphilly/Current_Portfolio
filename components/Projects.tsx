@@ -14,8 +14,26 @@ export function Projects() {
 
 
 const PROJECTS = [
-  {
+    {
     id: 0,
+    title: "Studiyo | AI-powered Notebook and Study Assistant ",
+    image: "/assets/images/study2.png",
+    link: "https://talk-to-doc.vercel.app",
+    github: "https://github.com/warrenphilly/talkToDoc",
+    tools: [
+      "Next.js",
+      "Tailwind CSS",
+      "Shadcn UI",
+      "Stripe",
+      "Firebase",
+      "Vercel",
+      "Docker",
+      "Clerk"
+    ],
+    description: "Studiyo is an AI-powered notebook and study assistant that helps you learn and study more effectively. It is built with Next.js and TailwindCSS and uses OpenAI's GPT-4o model to generate notes, summaries of your study materials, practice questions, and even create flashcards for you to study.",
+  },
+  {
+    id: 1,
     title: "Rifty.co | Peer-to-Peer Rental Platform",
     image: "/assets/images/RiftyProject.png",
     link: "https://rifty.co",
@@ -34,7 +52,7 @@ const PROJECTS = [
     description: "Rifty is my magnum opus - a production-ready P2P rental marketplace that connects communities. Built with scalability in mind, it features secure payments, authentication, and cloud storage, all wrapped in a polished, responsive interface ready for startup deployment.",
   },
   {
-    id: 1,
+    id: 2,
     title: "Warren Real Estate - A Landing Page for a Real Estate Agency",
     image: "/assets/images/WarrenRealEstate.png", // Add a placeholder image
     link: "https://real-estate-app-one-nu.vercel.app",
@@ -43,7 +61,7 @@ const PROJECTS = [
     description: " This is a landing page for a real estate agency. It is built with Next.js and TailwindCSS. It is a simple and responsive landing page that showcases the agency's services and properties.",
   },
   {
-    id: 2,
+    id: 3,
     title: "L.E.V.I | GPT powered Ai voice assistant with a charming british wit, ",
     image: "/assets/images/Levi.png", // Add a placeholder image
     link: "https://levi-live.vercel.app",
@@ -52,7 +70,7 @@ const PROJECTS = [
     description: "L.E.V.I is a GPT powered Ai voice assistant with a charming british wit. It is built with Next.js and TailwindCSS and run's openai's whisper model to convert text to speech and Speech-to-text API to convert speech to text. And GPT-4o to power the voice assistant.Warning-He's kind of a jerk. (Currently under maintenance)",
   },
   {
-    id: 3,
+    id: 4,
     title: "Coming Soon...",
     image: "/assets/images/coming-soon.png", // Add a placeholder image
     link: "#",
