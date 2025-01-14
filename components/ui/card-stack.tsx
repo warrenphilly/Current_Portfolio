@@ -1,9 +1,13 @@
 "use client";
-import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
-import { ChevronLeftIcon, ChevronRightIcon, BuildingOfficeIcon } from "@heroicons/react/24/outline";
-import Image from "next/image";
 import { cn } from "@/lib/utils";
+import {
+  BuildingOfficeIcon,
+  ChevronLeftIcon,
+  ChevronRightIcon,
+} from "@heroicons/react/24/outline";
+import { motion } from "framer-motion";
+import Image from "next/image";
+import { useEffect, useState } from "react";
 
 type Card = {
   id: number;
@@ -59,11 +63,11 @@ export const CardStack = ({
     <div className="relative h-[1000px] md:h-full md:mt-0 w-full mb-10 flex lg:justify-center lg:items-center ">
       {cards.map((card, index) => {
         const isComingSoon = card.link === "#" || card.github === "#";
-        
+
         return (
           <motion.div
             key={card.id}
-            className="absolute dark:bg-black bg-[#0e1720] min-h-[600px] md:min-h-[800px] border border-neutral-700 mb-10 w-full md:h-full max-h-full md:max-h-[800px] rounded-3xl shadow-xl flex flex-col p-4 md:p-8 lg:max-w-[1100px]"
+            className="absolute  bg-[#0e1720] min-h-[600px] md:min-h-[800px] border border-neutral-700 mb-10 w-full md:h-full max-h-full md:max-h-[800px] rounded-3xl shadow-xl flex flex-col p-4 md:p-8 lg:max-w-[1100px]"
             style={{
               transformOrigin: "top center",
             }}
@@ -75,7 +79,7 @@ export const CardStack = ({
           >
             <div className="flex flex-row justify-between items-center gap-2 py-2 md:py-4 my-2 md:my-5">
               <button
-                className="bg-[#42464a] w-10 h-10 md:hidden dark:bg-black rounded-full shadow-md flex items-center justify-center"
+                className="bg-[#42464a] w-10 h-10 md:hidden  rounded-full shadow-md flex items-center justify-center"
                 onClick={handlePrev}
                 aria-label="Previous project"
               >
@@ -87,7 +91,7 @@ export const CardStack = ({
               </h2>
 
               <button
-                className="bg-[#42464a]  w-10 h-10 md:hidden dark:bg-black rounded-full shadow-md flex items-center justify-center"
+                className="bg-[#42464a]  w-10 h-10 md:hidden  rounded-full shadow-md flex items-center justify-center"
                 onClick={handleNext}
                 aria-label="Next project"
               >
@@ -96,9 +100,9 @@ export const CardStack = ({
             </div>
 
             <div className="flex md:flex-row flex-col h-auto md:h-full gap-4">
-              <div className="relative bg-white h-[300px] md:h-full min-h-[200px] md:min-h-[300px] flex-grow mb-2 md:mb-4 rounded-xl overflow-hidden w-full shadow-2xl">
+              <div className="relative  md:w-1/2 flex-shrink-0 mb-2 md:mb-4 rounded-xl overflow-hidden shadow-2xl  items-center justify-center">
                 {isComingSoon && (
-                  <div className="absolute inset-0 z-10 flex flex-col items-center justify-center bg-black/50 backdrop-blur-sm">
+                  <div className="absolute inset-0 z-10 flex flex-col items-center justify-center bg-#0e1720 backdrop-blur-sm">
                     <div className="absolute -rotate-12 bg-yellow-400 text-black font-bold py-2 px-8 shadow-lg transform -translate-y-4 border-2 border-yellow-500">
                       <div className="flex items-center gap-2">
                         <BuildingOfficeIcon className="h-5 w-5" />
@@ -123,30 +127,34 @@ export const CardStack = ({
                     </div> */}
                   </div>
                 )}
-                <div className="relative w-full h-full flex items-center justify-center">
-                  <Image
-                    src={card.image}
-                    alt={card.title}
-                    fill
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    quality={95}
-                    priority={index === 0}
-                    className={cn(
-                      "object-contain md:object-fill w-full h-full",
-                      isComingSoon && "opacity-50"
-                    )}
-                  />
+                <div className=" w-full pt-[56.25%] md:pt-[75%] ">
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <Image
+                      src={card.image}
+                      alt={card.title}
+                      fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 33vw"
+                      quality={95}
+                      priority={index === 0}
+                      className={cn(
+                        "object-contain p-4 hover:scale-105 transition-transform duration-500",
+                        isComingSoon && "opacity-50"
+                      )}
+                    />
+                  </div>
                 </div>
               </div>
-              <div className="w-full rounded-lg p-2 md:p-4 text-white flex flex-col justify-start md:justify-between gap-4 md:gap-8 text-sm md:text-xl">
+              <div className="w-full md:w-1/2 rounded-lg p-2 md:p-4 text-white flex flex-col justify-start md:justify-between gap-4 md:gap-8 text-sm md:text-xl">
                 {card.description}
                 <div className="flex md:flex-row flex-col md:gap-2 gap-6 justify-between items-center md:items-end">
                   <div className="flex flex-col gap-2">
-                    <span className="text-white font-bold text-sm">Tools I used:</span> 
+                    <span className="text-white font-bold text-sm">
+                      Tools I used:
+                    </span>
                     <div className="flex flex-wrap md:max-w-[300px] gap-2">
                       {card.tools.map((tool, index) => (
-                        <span 
-                          key={index} 
+                        <span
+                          key={index}
                           className="text-lightBlue-300 font-bold text-xs md:text-sm bg-[#202a33] px-2 py-1 rounded-md shadow-md"
                         >
                           {tool}
@@ -166,10 +174,10 @@ export const CardStack = ({
                       </a>
                     )} */}
                     {card.link !== "#" && (
-                      <a 
-                        href={card.link} 
-                        target="_blank" 
-                        rel="noopener noreferrer" 
+                      <a
+                        href={card.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="text-[#ffffff] py-2 font-bold text-md w-full md:w-auto bg-[#254463] text-center px-4 rounded-lg  hover:bg-[#343a3f] transition-colors"
                       >
                         View Demo
@@ -177,7 +185,7 @@ export const CardStack = ({
                     )}
                   </div>
                 </div>
-              </div> 
+              </div>
             </div>
           </motion.div>
         );
